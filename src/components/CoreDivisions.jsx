@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import ConsultationModal from './consulationModal';
 
 export default function CoreDivisions() {
-  // eslint-disable-next-line no-unused-vars
   const [expandedCard, setExpandedCard] = useState(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const divisions = [
     {
@@ -138,8 +137,8 @@ export default function CoreDivisions() {
     }
   ];
 
-  const toggleCard = () => {
-    document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' });
+  const toggleCard = (index) => {
+    setExpandedCard(expandedCard === index ? null : index);
   };
 
   return (
@@ -668,6 +667,7 @@ export default function CoreDivisions() {
 
         .toggle-btn {
           align-self: flex-start;
+          margin-top: 2rem;
           padding: 0.9rem 1.8rem;
           background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
           color: white;
@@ -681,17 +681,11 @@ export default function CoreDivisions() {
           display: flex;
           align-items: center;
           gap: 0.6rem;
-          text-decoration: none;
         }
 
         .toggle-btn:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
-        }
-
-        .explore-btn {
-          margin-top: 0.8rem;
-          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         }
 
         .arrow {
