@@ -142,7 +142,7 @@ export default function CoreDivisions() {
   };
 
   return (
-    <section className="divisions-section">
+    <section id="divisions" className="divisions-section">
       <div className="bg-gradient"></div>
       <div className="floating-blob blob-1"></div>
       <div className="floating-blob blob-2"></div>
