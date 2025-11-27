@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function AboutUs() {
   const stats = [
-    { number: "50+", label: "AI Projects Delivered" },
-    { number: "30+", label: "Enterprise Clients" },
-    { number: "$10M+", label: "ROI Generated" },
-    { number: "5 yrs", label: "Industry Experience" }
+    { number: "15+", label: "AI Projects Completed" },
+    { number: "5+", label: "Active Projects" },
+    { number: "100%", label: "Dedication to Quality" },
+    { number: "24/7", label: "Support Available" }
   ];
 
   const values = [
@@ -31,31 +31,8 @@ export default function AboutUs() {
     }
   ];
 
-//   const team = [
-//     {
-//       role: "Founder & AI Strategist",
-//       experience: "15+ years in AI/ML implementation",
-//       focus: "Leading transformations for Fortune 500 companies"
-//     },
-//     {
-//       role: "Head of Engineering",
-//       experience: "12+ years full-stack development",
-//       focus: "Building scalable, production-grade AI systems"
-//     },
-//     {
-//       role: "Customer Success Lead",
-//       experience: "10+ years B2B SaaS",
-//       focus: "Ensuring every client achieves their AI goals"
-//     },
-//     {
-//       role: "Data Science Director",
-//       experience: "8+ years machine learning",
-//       focus: "Custom AI models and predictive analytics"
-//     }
-//   ];
-
   return (
-    <section className="about-us-section">
+    <section id="overview" className="about-us-section">
       <div className="animated-background">
         <div className="gradient-blob blob-1"></div>
         <div className="gradient-blob blob-2"></div>
@@ -65,8 +42,9 @@ export default function AboutUs() {
       <div className="container">
         {/* Hero Section */}
         <div className="about-hero">
+          <div className="hero-badge">🚀 Leading AI Innovation</div>
           <div className="hero-content">
-            <h1>About GenX pro AI</h1>
+            <h1>About <span className="gradient-text">GenX Pro AI</span></h1>
             <p className="hero-subtitle">
               We're not just another AI consultancy. We're builders, problem-solvers, and your transformation partner.
             </p>
@@ -92,19 +70,22 @@ export default function AboutUs() {
         {/* Story Section */}
         <div className="story-section">
           <div className="story-content">
-            <h2>Our Story</h2>
+            <h2>Our <span className="gradient-text">Story</span></h2>
             <p>
-              GenX pro AI was born from frustration. We watched brilliant businesses struggle with AI adoption—not because 
-              the technology wasn't powerful, but because it wasn't accessible or practical for real-world operations.
+              GenX Pro AI was born from a vision to democratize artificial intelligence. We watched brilliant businesses 
+              struggle with AI adoption—not because the technology wasn't powerful, but because it wasn't accessible or 
+              practical for real-world operations.
             </p>
             <p>
-              Our founding team spent years implementing AI in enterprise environments. We saw what worked and what didn't. 
-              We learned that successful AI isn't about the fanciest models—it's about solving real business problems with 
-              practical, scalable solutions.
+              As a startup, we're agile, innovative, and hungry to prove ourselves. Our founding team brings together 
+              expertise in AI, software engineering, and business strategy. We've worked on AI projects across industries 
+              and learned that successful AI isn't about the fanciest models—it's about solving real business problems 
+              with practical, scalable solutions.
             </p>
             <p>
-              That's why we built GenX pro AI. To bridge the gap between cutting-edge AI and practical business needs. 
-              To transform how companies operate. To make AI a competitive advantage, not a complicated experiment.
+              That's why we built GenX Pro AI. To bridge the gap between cutting-edge AI and practical business needs. 
+              To transform how companies operate. To make AI a competitive advantage, not a complicated experiment. 
+              We're small enough to care deeply about every client, yet capable enough to deliver enterprise-grade solutions.
             </p>
           </div>
           <div className="story-highlight">
@@ -112,13 +93,27 @@ export default function AboutUs() {
               <div className="highlight-icon">💼</div>
               <h3>Our Approach</h3>
               <p>Audit → Strategy → Implementation → Optimization. Simple. Proven. Effective.</p>
+              <div className="approach-features">
+                <div className="feature">
+                  <span className="check">✓</span>
+                  <span>Personalized Solutions</span>
+                </div>
+                <div className="feature">
+                  <span className="check">✓</span>
+                  <span>Rapid Deployment</span>
+                </div>
+                <div className="feature">
+                  <span className="check">✓</span>
+                  <span>Ongoing Support</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Values Section */}
         <div className="values-section">
-          <h2>Our Core Values</h2>
+          <h2>Our Core <span className="gradient-text">Values</span></h2>
           <p className="values-intro">These aren't just words on a wall. They guide every decision we make.</p>
           
           <div className="values-grid">
@@ -132,29 +127,32 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Team Section */}
-        {/* <div className="team-section">
-          <h2>Leadership Team</h2>
-          <p className="team-intro">Built by AI experts with decades of combined experience.</p>
-          
-          <div className="team-grid">
-            {team.map((member, index) => (
-              <div key={index} className="team-card">
-                <div className="team-avatar">{index + 1}</div>
-                <h3>{member.role}</h3>
-                <p className="team-experience">{member.experience}</p>
-                <p className="team-focus">{member.focus}</p>
-              </div>
-            ))}
+        {/* Why Choose Us Section */}
+        <div className="why-choose-section">
+          <h2>Why Choose <span className="gradient-text">GenX Pro AI</span>?</h2>
+          <div className="why-grid">
+            <div className="why-card">
+              <div className="why-icon">⚡</div>
+              <h3>Startup Agility</h3>
+              <p>Fast decisions, quick pivots, and personalized attention. No corporate bureaucracy holding us back.</p>
+            </div>
+            <div className="why-card">
+              <div className="why-icon">💎</div>
+              <h3>Enterprise Quality</h3>
+              <p>Startup spirit with enterprise-grade solutions. We deliver production-ready AI that scales.</p>
+            </div>
+            <div className="why-card">
+              <div className="why-icon">🎓</div>
+              <h3>Hands-On Training</h3>
+              <p>We don't just build and leave. We train your team to own and optimize the AI solutions we create.</p>
+            </div>
+            <div className="why-card">
+              <div className="why-icon">💰</div>
+              <h3>Startup-Friendly Pricing</h3>
+              <p>Flexible pricing models designed for growing businesses. ROI-focused, not just billable hours.</p>
+            </div>
           </div>
-        </div> */}
-
-        {/* CTA Section */}
-        {/* <div className="cta-section">
-          <h2>Ready to Transform Your Business?</h2>
-          <p>Let's discuss how AI can accelerate your growth.</p>
-          <button className="cta-button">Schedule a Consultation</button>
-        </div> */}
+        </div>
       </div>
 
       <style>{`
@@ -165,7 +163,7 @@ export default function AboutUs() {
         }
 
         .about-us-section {
-          padding: 6rem 2rem;
+          padding: 8rem 2rem 6rem;
           position: relative;
           overflow: hidden;
           background: linear-gradient(180deg, #fafbff 0%, #f5f7ff 50%, #f0f4ff 100%);
@@ -227,6 +225,13 @@ export default function AboutUs() {
           z-index: 1;
         }
 
+        .gradient-text {
+          background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #f59e0b 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
         /* Hero Section */
         .about-hero {
           text-align: center;
@@ -239,17 +244,29 @@ export default function AboutUs() {
           to { opacity: 1; transform: translateY(0); }
         }
 
+        .hero-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+
         .about-hero h1 {
-          font-size: 3.5rem;
+          font-size: 3.8rem;
           color: #0f172a;
           margin-bottom: 1.5rem;
           font-weight: 700;
           line-height: 1.1;
-          letter-spacing: -1px;
+          letter-spacing: -1.5px;
         }
 
         .hero-subtitle {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
           color: #475569;
           margin-bottom: 2rem;
           font-weight: 500;
@@ -257,12 +274,12 @@ export default function AboutUs() {
         }
 
         .hero-description {
-          max-width: 800px;
+          max-width: 850px;
           margin: 0 auto;
         }
 
         .hero-description p {
-          font-size: 1.1rem;
+          font-size: 1.15rem;
           color: #64748b;
           line-height: 1.8;
           font-weight: 500;
@@ -271,22 +288,28 @@ export default function AboutUs() {
         /* Stats Grid */
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
           gap: 2rem;
           margin-bottom: 6rem;
           padding: 3rem;
           background: white;
           border-radius: 24px;
           border: 1px solid rgba(124, 58, 237, 0.1);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
         }
 
         .stat-card {
           text-align: center;
+          padding: 1rem;
+          transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-5px);
         }
 
         .stat-number {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 700;
           background: linear-gradient(135deg, #7c3aed, #6366f1);
           -webkit-background-clip: text;
@@ -304,21 +327,23 @@ export default function AboutUs() {
         /* Story Section */
         .story-section {
           display: grid;
-          grid-template-columns: 1.2fr 1fr;
+          grid-template-columns: 1.3fr 1fr;
           gap: 3rem;
-          align-items: center;
+          align-items: start;
           margin-bottom: 6rem;
-          padding: 3rem;
+          padding: 3.5rem;
           background: white;
           border-radius: 24px;
           border: 1px solid rgba(124, 58, 237, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
         }
 
         .story-section h2 {
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           color: #0f172a;
           margin-bottom: 1.5rem;
           font-weight: 700;
+          letter-spacing: -0.5px;
         }
 
         .story-section p {
@@ -334,31 +359,55 @@ export default function AboutUs() {
         }
 
         .highlight-box {
-          background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(99, 102, 241, 0.1));
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(99, 102, 241, 0.08));
           border: 2px solid rgba(124, 58, 237, 0.2);
-          border-radius: 16px;
-          padding: 2rem;
+          border-radius: 20px;
+          padding: 2.5rem;
           text-align: center;
+          position: sticky;
+          top: 2rem;
         }
 
         .highlight-icon {
-          font-size: 3rem;
+          font-size: 3.5rem;
           margin-bottom: 1rem;
           display: block;
         }
 
         .highlight-box h3 {
-          font-size: 1.5rem;
+          font-size: 1.6rem;
           color: #0f172a;
-          margin-bottom: 0.8rem;
+          margin-bottom: 1rem;
           font-weight: 700;
         }
 
         .highlight-box p {
-          font-size: 1rem;
+          font-size: 1.05rem;
           color: #475569;
-          margin-bottom: 0;
+          margin-bottom: 1.5rem;
+          font-weight: 600;
+        }
+
+        .approach-features {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          margin-top: 1.5rem;
+        }
+
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          font-size: 0.95rem;
+          color: #475569;
           font-weight: 500;
+        }
+
+        .check {
+          color: #22c55e;
+          font-weight: 700;
+          font-size: 1.2rem;
         }
 
         /* Values Section */
@@ -367,24 +416,25 @@ export default function AboutUs() {
         }
 
         .values-section h2 {
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           color: #0f172a;
           margin-bottom: 1rem;
           font-weight: 700;
           text-align: center;
+          letter-spacing: -0.5px;
         }
 
         .values-intro {
-          font-size: 1.1rem;
+          font-size: 1.15rem;
           color: #475569;
           text-align: center;
-          margin-bottom: 3rem;
+          margin-bottom: 3.5rem;
           font-weight: 500;
         }
 
         .values-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           gap: 2rem;
         }
 
@@ -394,164 +444,119 @@ export default function AboutUs() {
           border-radius: 20px;
           padding: 2.5rem 2rem;
           text-align: center;
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
         }
 
         .value-card:hover {
           transform: translateY(-8px);
           border-color: rgba(124, 58, 237, 0.3);
-          box-shadow: 0 12px 40px rgba(124, 58, 237, 0.1);
+          box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
         }
 
         .value-icon {
-          font-size: 3rem;
+          font-size: 3.5rem;
           margin-bottom: 1rem;
           display: block;
         }
 
         .value-card h3 {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
           color: #0f172a;
           margin-bottom: 0.8rem;
           font-weight: 700;
         }
 
         .value-card p {
-          font-size: 0.95rem;
+          font-size: 1rem;
           color: #475569;
           line-height: 1.7;
           font-weight: 500;
         }
 
-        /* Team Section */
-        .team-section {
-          margin-bottom: 6rem;
+        /* Why Choose Section */
+        .why-choose-section {
+          margin-bottom: 4rem;
         }
 
-        .team-section h2 {
-          font-size: 2.5rem;
+        .why-choose-section h2 {
+          font-size: 2.8rem;
           color: #0f172a;
-          margin-bottom: 1rem;
+          margin-bottom: 3rem;
           font-weight: 700;
           text-align: center;
+          letter-spacing: -0.5px;
         }
 
-        .team-intro {
-          font-size: 1.1rem;
-          color: #475569;
-          text-align: center;
-          margin-bottom: 3rem;
-          font-weight: 500;
-        }
-
-        .team-grid {
+        .why-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           gap: 2rem;
         }
 
-        .team-card {
-          background: white;
-          border: 1.5px solid rgba(124, 58, 237, 0.1);
+        .why-card {
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(99, 102, 241, 0.05));
+          border: 1.5px solid rgba(124, 58, 237, 0.15);
           border-radius: 20px;
           padding: 2.5rem 2rem;
           text-align: center;
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
         }
 
-        .team-card:hover {
+        .why-card:hover {
           transform: translateY(-8px);
+          background: white;
           border-color: rgba(124, 58, 237, 0.3);
-          box-shadow: 0 12px 40px rgba(124, 58, 237, 0.1);
+          box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
         }
 
-        .team-avatar {
-          width: 80px;
-          height: 80px;
-          background: linear-gradient(135deg, #7c3aed, #6366f1);
-          color: white;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 2rem;
-          font-weight: 700;
-          margin: 0 auto 1.5rem;
+        .why-icon {
+          font-size: 3.5rem;
+          margin-bottom: 1rem;
+          display: block;
         }
 
-        .team-card h3 {
-          font-size: 1.2rem;
+        .why-card h3 {
+          font-size: 1.4rem;
           color: #0f172a;
           margin-bottom: 0.8rem;
           font-weight: 700;
         }
 
-        .team-experience {
-          font-size: 0.9rem;
-          color: #7c3aed;
-          font-weight: 600;
-          margin-bottom: 0.8rem;
-        }
-
-        .team-focus {
-          font-size: 0.95rem;
-          color: #475569;
-          line-height: 1.6;
-          font-weight: 500;
-        }
-
-        /* CTA Section */
-        .cta-section {
-          background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(99, 102, 241, 0.1));
-          border: 2px solid rgba(124, 58, 237, 0.2);
-          border-radius: 24px;
-          padding: 4rem 3rem;
-          text-align: center;
-        }
-
-        .cta-section h2 {
-          font-size: 2.2rem;
-          color: #0f172a;
-          margin-bottom: 0.8rem;
-          font-weight: 700;
-        }
-
-        .cta-section p {
-          font-size: 1.1rem;
-          color: #475569;
-          margin-bottom: 2rem;
-          font-weight: 500;
-        }
-
-        .cta-button {
-          padding: 1rem 2.5rem;
-          background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
-          color: white;
-          border: none;
-          border-radius: 12px;
+        .why-card p {
           font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+          color: #475569;
+          line-height: 1.7;
+          font-weight: 500;
         }
 
-        .cta-button:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 32px rgba(124, 58, 237, 0.35);
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .story-section {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+          }
+
+          .highlight-box {
+            position: static;
+          }
         }
 
         @media (max-width: 768px) {
           .about-us-section {
-            padding: 4rem 1.5rem;
+            padding: 6rem 1.5rem 4rem;
           }
 
           .about-hero h1 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
           }
 
           .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+          }
+
+          .hero-description p {
+            font-size: 1rem;
           }
 
           .stats-grid {
@@ -561,34 +566,34 @@ export default function AboutUs() {
             margin-bottom: 4rem;
           }
 
+          .stat-number {
+            font-size: 2.5rem;
+          }
+
           .story-section {
-            grid-template-columns: 1fr;
-            gap: 2rem;
             padding: 2rem;
             margin-bottom: 4rem;
           }
 
-          .story-section h2 {
-            font-size: 2rem;
-          }
-
+          .story-section h2,
           .values-section h2,
-          .team-section h2 {
+          .why-choose-section h2 {
             font-size: 2rem;
           }
 
-          .cta-section {
-            padding: 2.5rem 1.5rem;
+          .values-grid,
+          .why-grid {
+            grid-template-columns: 1fr;
           }
 
-          .cta-section h2 {
-            font-size: 1.8rem;
+          .highlight-box {
+            padding: 2rem;
           }
         }
 
         @media (max-width: 480px) {
           .about-hero h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
           }
 
           .stats-grid {
@@ -596,7 +601,18 @@ export default function AboutUs() {
           }
 
           .stat-number {
-            font-size: 2rem;
+            font-size: 2.2rem;
+          }
+
+          .story-section h2,
+          .values-section h2,
+          .why-choose-section h2 {
+            font-size: 1.8rem;
+          }
+
+          .value-icon,
+          .why-icon {
+            font-size: 3rem;
           }
         }
       `}</style>
