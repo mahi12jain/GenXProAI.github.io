@@ -1,78 +1,4 @@
-// export default function Footer() {
-//     return (
-//         <footer className="footer">
-//             <div className="container">
-//                 <div className="footer-content">
-//                     <div className="footer-brand">
-//                         <h3>GenX pro <span className="text-gradient">AI</span></h3>
-//                         <p>Intelligent Automation for the Future of Business</p>
-//                     </div>
-//                     <div className="footer-links">
-//                         <div className="link-group">
-//                             <h4>Company</h4>
-//                             <a href="#overview">About</a>
-//                             <a href="#divisions">Services</a>
-//                             <a href="#process">Process</a>
-//                         </div>
-//                         <div className="link-group">
-//                             <h4>Connect</h4>
-//                             <a href="#">LinkedIn</a>
-//                             <a href="#">Twitter</a>
-//                             <a href="#">Contact</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className="footer-bottom">
-//                     <p>&copy; {new Date().getFullYear()} GenX pro AI. All rights reserved.</p>
-//                 </div>
-//             </div>
-//             <style>{`
-//         .footer {
-//           background: var(--bg-secondary);
-//           padding: 4rem 0 2rem;
-//           border-top: 1px solid rgba(0,0,0,0.05);
-//         }
-//         .footer-content {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 3rem;
-//           margin-bottom: 3rem;
-//         }
-//         .footer-brand h3 {
-//           font-size: 1.5rem;
-//           margin-bottom: 0.5rem;
-//         }
-//         .footer-links {
-//           display: flex;
-//           gap: 4rem;
-//           flex-wrap: wrap;
-//         }
-//         .link-group {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 0.5rem;
-//         }
-//         .link-group h4 {
-//           font-size: 1rem;
-//           margin-bottom: 1rem;
-//         }
-//         .footer-bottom {
-//           text-align: center;
-//           padding-top: 2rem;
-//           border-top: 1px solid rgba(0,0,0,0.05);
-//           font-size: 0.9rem;
-//           color: var(--text-tertiary);
-//         }
-//         @media (min-width: 768px) {
-//           .footer-content {
-//             flex-direction: row;
-//             justify-content: space-between;
-//           }
-//         }
-//       `}</style>
-//         </footer>
-//     );
-// }
+
 
 
 export default function Footer() {
@@ -85,7 +11,7 @@ export default function Footer() {
                     <div className="footer-main">
                         <div className="footer-brand-section">
                             <div className="brand-logo">
-                                <span className="brand-name">GenX pro</span>
+                                <span className="brand-name">Flowbotic</span>
                                 <span className="brand-ai">.AI</span>
                             </div>
                             <p className="brand-tagline">
@@ -119,13 +45,13 @@ export default function Footer() {
                         </div>
 
                         <div className="footer-links-grid">
-                            <div className="footer-column">
+                            {/* <div className="footer-column">
                                 <h4 className="column-title">Solutions</h4>
                                 <a href="#divisions" className="footer-link">AI Automation</a>
                                 <a href="#divisions" className="footer-link">Custom Development</a>
                                 <a href="#divisions" className="footer-link">Integration Services</a>
                                 <a href="#divisions" className="footer-link">Consulting</a>
-                            </div>
+                            </div> */}
 
                             <div className="footer-column">
                                 <h4 className="column-title">Company</h4>
@@ -147,7 +73,7 @@ export default function Footer() {
                                 <h4 className="column-title">Contact</h4>
                                 <a href="#" className="footer-link">Get Started</a>
                                 <a href="#" className="footer-link">Schedule Demo</a>
-                                <a href="mailto:info@genxproai.com" className="footer-link">info@genxproai.com</a>
+                                <a href="mailto:flowboticai.team@gmail.com" className="footer-link">flowboticai.team@gmail.com</a>
                                 <a href="tel:+919327178988" className="footer-link">+91 9327178988</a>
                             </div>
                         </div>
@@ -178,7 +104,7 @@ export default function Footer() {
                     <div className="footer-bottom">
                         <div className="footer-bottom-content">
                             <p className="copyright">
-                                © {currentYear} GenX pro AI. All rights reserved.
+                                © {currentYear} Flowbotic AI. All rights reserved.
                             </p>
                             <div className="legal-links">
                                 <a href="#" className="legal-link">Privacy Policy</a>
