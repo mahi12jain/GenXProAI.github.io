@@ -1,13 +1,43 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect, useRef } from 'react';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 const SplineHero = ({ onOpenContact }) => {
+    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const updateDimensions = () => {
+            if (containerRef.current) {
+                const { clientWidth, clientHeight } = containerRef.current;
+                // Only update if dimensions are valid
+                if (clientWidth > 0 && clientHeight > 0) {
+                    setDimensions({ width: clientWidth, height: clientHeight });
+                }
+            }
+        };
+
+        // Initial dimension check
+        updateDimensions();
+
+        // Update on resize
+        const resizeObserver = new ResizeObserver(updateDimensions);
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current);
+        }
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, []);
+
     return (
-        <div className="relative h-screen w-full overflow-hidden bg-primary-50">
+        <div ref={containerRef} className="relative h-screen w-full overflow-hidden bg-primary-50">
             <div className="absolute inset-0 z-0">
-                <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-primary-500">Loading 3D Scene...</div>}>
-                    <Spline scene="https://prod.spline.design/oiOVyQkjOrar0fRG/scene.splinecode" />
-                </Suspense>
+                {dimensions.width > 0 && dimensions.height > 0 && (
+                    <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-primary-500">Loading 3D Scene...</div>}>
+                        <Spline scene="https://prod.spline.design/oiOVyQkjOrar0fRG/scene.splinecode" />
+                    </Suspense>
+                )}
             </div>
 
             <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 lg:px-24 pointer-events-none">

@@ -282,10 +282,16 @@ export default function CoreDivisions() {
         }
 
         .divisions-section {
-          padding: 5rem 2rem;
+          padding: 3rem 1rem;
           position: relative;
           overflow: hidden;
           min-height: 100vh;
+        }
+
+        @media (min-width: 768px) {
+          .divisions-section {
+            padding: 5rem 2rem;
+          }
         }
 
         .bg-gradient {
@@ -395,10 +401,22 @@ export default function CoreDivisions() {
 
         .divisions-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-          gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
           margin-bottom: 4rem;
           transition: all 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+          .divisions-grid {
+            gap: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .divisions-grid {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          }
         }
 
         .divisions-grid.has-expanded {
@@ -408,13 +426,20 @@ export default function CoreDivisions() {
         .division-card {
           background: white;
           border: 1px solid rgba(124, 58, 237, 0.08);
-          border-radius: 20px;
-          padding: 2rem;
+          border-radius: 16px;
+          padding: 1.5rem;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
           position: relative;
           display: flex;
           flex-direction: column;
+        }
+
+        @media (min-width: 640px) {
+          .division-card {
+            padding: 2rem;
+            border-radius: 20px;
+          }
         }
 
         .division-card:hover:not(.dimmed) {
@@ -541,8 +566,14 @@ export default function CoreDivisions() {
           padding-top: 2rem;
           border-top: 2px solid rgba(124, 58, 237, 0.1);
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: 1fr;
           gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .expanded-content {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          }
         }
 
         .content-section {
@@ -846,13 +877,25 @@ export default function CoreDivisions() {
             padding: 3rem 1rem;
           }
 
+          .section-header {
+            margin-bottom: 3rem;
+          }
+
           .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
+          }
+
+          .subtitle {
+            font-size: 1rem;
           }
 
           .divisions-grid {
             grid-template-columns: 1fr;
             gap: 1.5rem;
+          }
+
+          .divisions-grid.has-expanded {
+            grid-template-columns: 1fr;
           }
 
           .expanded-content {
@@ -869,12 +912,51 @@ export default function CoreDivisions() {
 
           .card-header {
             gap: 1rem;
+            flex-direction: row;
           }
 
           .icon-wrapper {
-            width: 60px;
-            height: 60px;
-            font-size: 2.2rem;
+            width: 56px;
+            height: 56px;
+            font-size: 2rem;
+          }
+
+          .header-content h3 {
+            font-size: 1.1rem;
+          }
+
+          .tagline {
+            font-size: 0.813rem;
+          }
+
+          .short-description {
+            font-size: 0.938rem;
+          }
+
+          .stats-impact {
+            flex-direction: column;
+          }
+
+          .impact-badge,
+          .stats-badge {
+            width: 100%;
+          }
+
+          .toggle-btn {
+            width: 100%;
+          }
+
+          .cta-content {
+            padding: 2.5rem 1.5rem;
+          }
+
+          .cta-text {
+            font-size: 1.5rem;
+          }
+
+          .cta-features {
+            flex-direction: column;
+            gap: 1rem;
           }
         }
 

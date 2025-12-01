@@ -14,11 +14,18 @@ export default function CompanyOverview() {
             </div>
             <style>{`
         .overview-text {
-          font-size: 1.125rem;
+          font-size: clamp(0.938rem, 2vw, 1.125rem);
           text-align: center;
           max-width: 800px;
           margin: 0 auto 1.5rem;
           color: var(--text-secondary);
+          line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+          .section {
+            padding: 3rem 0;
+          }
         }
       `}</style>
         </section>

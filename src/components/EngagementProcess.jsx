@@ -85,13 +85,15 @@ export default function EngagementProcess() {
                             style={{ animationDelay: `${index * 0.15}s` }}
                         >
                             <div className="step-wrapper">
-                                <div className="step-indicator">
-                                    <div className="step-number">{index + 1}</div>
-                                    <div className="step-icon">{step.icon}</div>
-                                </div>
-                                
                                 <div className="step-card glass-card">
-                                    <div className="step-badge">{step.highlight}</div>
+                                    <div className="step-header-row">
+                                        <div className="step-indicator">
+                                            <div className="step-number">{index + 1}</div>
+                                            <div className="step-icon">{step.icon}</div>
+                                        </div>
+                                        <div className="step-badge">{step.highlight}</div>
+                                    </div>
+                                    
                                     <h3 className="step-title">{step.title}</h3>
                                     <p className="step-description">{step.description}</p>
                                     <div className="step-metrics">
@@ -161,12 +163,18 @@ export default function EngagementProcess() {
 
             {isModalOpen && <ConsultationModal onClose={() => setIsModalOpen(false)} />}
 
-            <style jsx>{`
+            <style>{`
                 .process-section {
                     position: relative;
                     overflow: hidden;
                     background: linear-gradient(180deg, #ffffff 0%, #f9fafb 50%, #ffffff 100%);
-                    padding: 6rem 1.5rem;
+                    padding: 4rem 1rem;
+                }
+
+                @media (min-width: 768px) {
+                    .process-section {
+                        padding: 6rem 1.5rem;
+                    }
                 }
 
                 .process-section::before {
@@ -316,18 +324,38 @@ export default function EngagementProcess() {
                     align-items: flex-start;
                 }
 
+                .step-header-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 1.5rem;
+                    gap: 1rem;
+                }
+
                 .step-indicator {
                     flex-shrink: 0;
                     position: relative;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 1rem;
+                    gap: 0.75rem;
+                }
+
+                @media (min-width: 768px) {
+                    .step-header-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .step-indicator {
+                        flex-direction: row;
+                        gap: 1rem;
+                    }
                 }
 
                 .step-number {
-                    width: 64px;
-                    height: 64px;
+                    width: 48px;
+                    height: 48px;
                     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
                     color: white;
                     border-radius: 50%;
@@ -335,11 +363,20 @@ export default function EngagementProcess() {
                     align-items: center;
                     justify-content: center;
                     font-weight: 800;
-                    font-size: 1.5rem;
-                    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.35), 0 0 0 6px rgba(99, 102, 241, 0.08);
+                    font-size: 1.25rem;
+                    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35), 0 0 0 4px rgba(99, 102, 241, 0.08);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     position: relative;
                     z-index: 2;
+                }
+
+                @media (min-width: 768px) {
+                    .step-number {
+                        width: 64px;
+                        height: 64px;
+                        font-size: 1.5rem;
+                        box-shadow: 0 10px 40px rgba(99, 102, 241, 0.35), 0 0 0 6px rgba(99, 102, 241, 0.08);
+                    }
                 }
 
                 .step-number::after {
@@ -363,15 +400,21 @@ export default function EngagementProcess() {
                 }
 
                 .step-icon {
-                    font-size: 2.25rem;
+                    font-size: 1.75rem;
                     filter: grayscale(30%) brightness(1.1);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
+                @media (min-width: 768px) {
+                    .step-icon {
+                        font-size: 2.25rem;
+                    }
+                }
+
                 .step-card {
                     flex: 1;
-                    padding: 2.5rem;
-                    border-radius: 20px;
+                    padding: 1.5rem;
+                    border-radius: 16px;
                     background: rgba(255, 255, 255, 0.95);
                     backdrop-filter: blur(20px);
                     border: 1.5px solid rgba(99, 102, 241, 0.12);
@@ -379,6 +422,20 @@ export default function EngagementProcess() {
                     position: relative;
                     overflow: hidden;
                     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+                }
+
+                @media (min-width: 640px) {
+                    .step-card {
+                        padding: 2rem;
+                        border-radius: 18px;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .step-card {
+                        padding: 2.5rem;
+                        border-radius: 20px;
+                    }
                 }
 
                 .step-card::before {
@@ -418,21 +475,29 @@ export default function EngagementProcess() {
                 .step-badge {
                     display: inline-flex;
                     align-items: center;
-                    padding: 0.5rem 1rem;
+                    padding: 0.4rem 0.875rem;
                     background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
                     border: 1.5px solid rgba(99, 102, 241, 0.2);
                     border-radius: 50px;
-                    font-size: 0.75rem;
+                    font-size: 0.688rem;
                     font-weight: 700;
                     color: #6366f1;
                     text-transform: uppercase;
-                    letter-spacing: 0.8px;
-                    margin-bottom: 1.25rem;
+                    letter-spacing: 0.6px;
                     transition: all 0.3s ease;
+                    white-space: nowrap;
+                }
+
+                @media (min-width: 640px) {
+                    .step-badge {
+                        padding: 0.5rem 1rem;
+                        font-size: 0.75rem;
+                        letter-spacing: 0.8px;
+                    }
                 }
 
                 .step-title {
-                    font-size: 1.625rem;
+                    font-size: clamp(1.25rem, 3vw, 1.625rem);
                     font-weight: 800;
                     margin-bottom: 1rem;
                     color: #111827;
@@ -441,7 +506,7 @@ export default function EngagementProcess() {
                 }
 
                 .step-description {
-                    font-size: 1.0625rem;
+                    font-size: clamp(0.938rem, 2vw, 1.0625rem);
                     line-height: 1.8;
                     color: #4b5563;
                     margin-bottom: 1.5rem;
@@ -499,11 +564,25 @@ export default function EngagementProcess() {
 
                 .cta-content {
                     text-align: center;
-                    padding: 4rem 3rem;
+                    padding: 2.5rem 1.5rem;
                     background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 50%, rgba(236, 72, 153, 0.08) 100%);
-                    border-radius: 28px;
+                    border-radius: 20px;
                     border: 2px solid rgba(99, 102, 241, 0.15);
                     box-shadow: 0 20px 60px rgba(99, 102, 241, 0.1);
+                }
+
+                @media (min-width: 640px) {
+                    .cta-content {
+                        padding: 3rem 2rem;
+                        border-radius: 24px;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .cta-content {
+                        padding: 4rem 3rem;
+                        border-radius: 28px;
+                    }
                 }
 
                 .cta-badge {
@@ -521,7 +600,7 @@ export default function EngagementProcess() {
                 }
 
                 .cta-text {
-                    font-size: 2rem;
+                    font-size: clamp(1.25rem, 4vw, 2rem);
                     font-weight: 800;
                     margin-bottom: 0.75rem;
                     color: #111827;
@@ -530,27 +609,42 @@ export default function EngagementProcess() {
                 }
 
                 .cta-subtext {
-                    font-size: 1.125rem;
+                    font-size: clamp(0.938rem, 2.5vw, 1.125rem);
                     color: #6b7280;
                     margin-bottom: 2rem;
                     font-weight: 400;
                 }
 
                 .cta-button {
-                    padding: 1.125rem 3rem;
+                    padding: 1rem 2rem;
                     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
                     color: white;
                     border: none;
                     border-radius: 50px;
-                    font-size: 1.125rem;
+                    font-size: 1rem;
                     font-weight: 700;
                     cursor: pointer;
                     display: inline-flex;
                     align-items: center;
-                    gap: 0.875rem;
+                    gap: 0.75rem;
                     transition: all 0.4s ease;
                     box-shadow: 0 10px 40px rgba(99, 102, 241, 0.35);
                     letter-spacing: 0.3px;
+                }
+
+                @media (min-width: 640px) {
+                    .cta-button {
+                        padding: 1.125rem 2.5rem;
+                        font-size: 1.063rem;
+                        gap: 0.875rem;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .cta-button {
+                        padding: 1.125rem 3rem;
+                        font-size: 1.125rem;
+                    }
                 }
 
                 .cta-button:hover {
@@ -601,6 +695,18 @@ export default function EngagementProcess() {
                     .step-metrics {
                         flex-direction: row;
                         justify-content: space-between;
+                    }
+
+                    .step-header-row {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1.25rem;
+                    }
+
+                    .step-indicator {
+                        flex-direction: column;
+                        align-items: center;
                     }
 
                     .cta-text {

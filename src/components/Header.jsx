@@ -1,24 +1,45 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 
 export default function Header({ onOpenContact }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    setIsMenuOpen(false);
+    onOpenContact();
+  };
 
   return (
     <header className="header">
       <div className="container header-container">
         <div className="logo">
-          GenX pro <span className="text-gradient">AI</span>
+          GenX pro <span className="text-gradient">AI</span>
         </div>
-        <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
-        </button>
+        
         <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#overview" className="nav-link" onClick={() => setIsMenuOpen(false)}>Overview</a>
-          <a href="#divisions" className="nav-link" onClick={() => setIsMenuOpen(false)}>Divisions</a>
-          <a href="#about-us" className="nav-link" onClick={() => setIsMenuOpen(false)}>About Us</a>
-          <a href="#process" className="nav-link" onClick={() => setIsMenuOpen(false)}>Process</a>
+          <a href="#overview" className="nav-link" onClick={handleNavClick}>Overview</a>
+          <a href="#divisions" className="nav-link" onClick={handleNavClick}>Divisions</a>
+          <a href="#about-us" className="nav-link" onClick={handleNavClick}>About Us</a>
+          <a href="#process" className="nav-link" onClick={handleNavClick}>Process</a>
+          <button className="btn btn-primary btn-mobile-menu" onClick={handleContactClick}>Contact Us</button>
         </nav>
-        <button className="btn btn-primary btn-header" onClick={onOpenContact}>Contact Us</button>
+
+        <button className="btn btn-primary btn-desktop" onClick={onOpenContact}>Contact Us</button>
+
+        <label className="menu-toggle" htmlFor="menu-check">
+          <input 
+            type="checkbox" 
+            id="menu-check" 
+            checked={isMenuOpen}
+            onChange={(e) => setIsMenuOpen(e.target.checked)}
+          />
+          <span className="top" />
+          <span className="middle" />
+          <span className="bottom" />
+        </label>
       </div>
       <style>{`
         html {
@@ -54,50 +75,61 @@ export default function Header({ onOpenContact }) {
           white-space: nowrap;
         }
 
+        input[type="checkbox"] {
+          -webkit-appearance: none;
+          display: none;
+          visibility: hidden;
+        }
+
         .menu-toggle {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          background: none;
-          border: none;
+          display: block;
+          position: relative;
           cursor: pointer;
-          padding: 0.75rem;
+          width: 35px;
+          height: 28px;
           z-index: 101;
           margin-left: auto;
         }
 
-        .hamburger {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-        }
-
-        .hamburger::before,
-        .hamburger::after,
-        .hamburger span {
-          content: '';
-          width: 25px;
-          height: 3px;
+        .menu-toggle span {
+          position: absolute;
+          width: 30px;
+          height: 4px;
           background: var(--text-primary);
-          border-radius: 2px;
-          transition: all 0.3s ease;
+          border-radius: 100px;
+          display: inline-block;
+          transition: 0.3s ease;
+          left: 0;
         }
 
-        .hamburger span {
-          width: 20px;
+        .menu-toggle span.top {
+          top: 0;
         }
 
-        .hamburger.active::before {
-          transform: rotate(45deg) translate(8px, 8px);
-          width: 25px;
+        .menu-toggle span.middle {
+          top: 12px;
         }
 
-        .hamburger.active::after {
-          transform: rotate(-45deg) translate(7px, -7px);
-          width: 25px;
+        .menu-toggle span.bottom {
+          bottom: 0;
         }
 
-        .hamburger.active span {
+        input[type="checkbox"]:checked ~ span.top {
+          transform: rotate(45deg);
+          transform-origin: top left;
+          width: 33px;
+          left: 3px;
+        }
+
+        input[type="checkbox"]:checked ~ span.bottom {
+          transform: rotate(-45deg);
+          transform-origin: top left;
+          width: 33px;
+          bottom: 0px;
+        }
+
+        input[type="checkbox"]:checked ~ span.middle {
+          transform: translateX(-20px);
           opacity: 0;
         }
 
@@ -119,7 +151,11 @@ export default function Header({ onOpenContact }) {
           color: var(--accent-primary);
         }
 
-        .btn-header {
+        .btn-desktop {
+          display: none;
+        }
+
+        .btn-mobile-menu {
           display: none;
         }
 
@@ -164,7 +200,7 @@ export default function Header({ onOpenContact }) {
             background: rgba(102, 126, 234, 0.1);
           }
 
-          .btn-header {
+          .btn-mobile-menu {
             display: block;
             width: 100%;
             padding: 0.75rem 1rem;
@@ -190,9 +226,13 @@ export default function Header({ onOpenContact }) {
             gap: 2.5rem;
           }
 
-          .btn-header {
+          .btn-desktop {
             display: block;
             flex-shrink: 0;
+          }
+
+          .btn-mobile-menu {
+            display: none;
           }
         }
       `}</style>

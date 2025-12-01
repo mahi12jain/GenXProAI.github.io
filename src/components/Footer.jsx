@@ -112,20 +112,38 @@ export default function Footer() {
                 .footer {
                     background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
                     border-top: 1px solid rgba(99, 102, 241, 0.1);
-                    padding: 5rem 0 0;
+                    padding: 3rem 0 0;
+                }
+
+                @media (min-width: 768px) {
+                    .footer {
+                        padding: 5rem 0 0;
+                    }
                 }
 
                 .footer-container {
                     max-width: 1400px;
                     margin: 0 auto;
-                    padding: 0 2rem;
+                    padding: 0 1rem;
+                }
+
+                @media (min-width: 640px) {
+                    .footer-container {
+                        padding: 0 1.5rem;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    .footer-container {
+                        padding: 0 2rem;
+                    }
                 }
 
                 .footer-main {
                     display: grid;
                     grid-template-columns: 1fr;
-                    gap: 3rem;
-                    padding-bottom: 4rem;
+                    gap: 2.5rem;
+                    padding-bottom: 3rem;
                     border-bottom: 1px solid rgba(99, 102, 241, 0.1);
                 }
 
@@ -133,6 +151,7 @@ export default function Footer() {
                     .footer-main {
                         grid-template-columns: 1.5fr 2fr;
                         gap: 4rem;
+                        padding-bottom: 4rem;
                     }
                 }
 
@@ -203,8 +222,15 @@ export default function Footer() {
 
                 .footer-links-grid {
                     display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2.5rem;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+
+                @media (min-width: 480px) {
+                    .footer-links-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 2.5rem;
+                    }
                 }
 
                 @media (min-width: 640px) {

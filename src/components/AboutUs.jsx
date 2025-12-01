@@ -163,10 +163,16 @@ export default function AboutUs() {
         }
 
         .about-us-section {
-          padding: 8rem 2rem 6rem;
+          padding: 5rem 1rem 4rem;
           position: relative;
           overflow: hidden;
           background: linear-gradient(180deg, #fafbff 0%, #f5f7ff 50%, #f0f4ff 100%);
+        }
+
+        @media (min-width: 768px) {
+          .about-us-section {
+            padding: 8rem 2rem 6rem;
+          }
         }
 
         .animated-background {
@@ -288,14 +294,24 @@ export default function AboutUs() {
         /* Stats Grid */
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 2rem;
-          margin-bottom: 6rem;
-          padding: 3rem;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+          padding: 2rem 1.5rem;
           background: white;
-          border-radius: 24px;
+          border-radius: 20px;
           border: 1px solid rgba(124, 58, 237, 0.1);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (min-width: 640px) {
+          .stats-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 3rem;
+            border-radius: 24px;
+            margin-bottom: 6rem;
+          }
         }
 
         .stat-card {
@@ -327,15 +343,25 @@ export default function AboutUs() {
         /* Story Section */
         .story-section {
           display: grid;
-          grid-template-columns: 1.3fr 1fr;
-          gap: 3rem;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
           align-items: start;
-          margin-bottom: 6rem;
-          padding: 3.5rem;
+          margin-bottom: 4rem;
+          padding: 2rem;
           background: white;
-          border-radius: 24px;
+          border-radius: 20px;
           border: 1px solid rgba(124, 58, 237, 0.1);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (min-width: 1024px) {
+          .story-section {
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
+            padding: 3.5rem;
+            border-radius: 24px;
+            margin-bottom: 6rem;
+          }
         }
 
         .story-section h2 {
@@ -434,8 +460,21 @@ export default function AboutUs() {
 
         .values-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+          .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .values-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
         }
 
         .value-card {
@@ -489,8 +528,21 @@ export default function AboutUs() {
 
         .why-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+          .why-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .why-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
         }
 
         .why-card {
@@ -543,16 +595,20 @@ export default function AboutUs() {
 
         @media (max-width: 768px) {
           .about-us-section {
-            padding: 6rem 1.5rem 4rem;
+            padding: 5rem 1rem 3rem;
+          }
+
+          .about-hero {
+            margin-bottom: 3rem;
           }
 
           .about-hero h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             letter-spacing: -1px;
           }
 
           .hero-subtitle {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
           }
 
           .hero-description p {
@@ -562,57 +618,83 @@ export default function AboutUs() {
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            padding: 2rem;
-            margin-bottom: 4rem;
-          }
-
-          .stat-number {
-            font-size: 2.5rem;
-          }
-
-          .story-section {
-            padding: 2rem;
-            margin-bottom: 4rem;
-          }
-
-          .story-section h2,
-          .values-section h2,
-          .why-choose-section h2 {
-            font-size: 2rem;
-          }
-
-          .values-grid,
-          .why-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .highlight-box {
-            padding: 2rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .about-hero h1 {
-            font-size: 2rem;
-          }
-
-          .stats-grid {
-            grid-template-columns: 1fr;
+            padding: 2rem 1.5rem;
+            margin-bottom: 3rem;
           }
 
           .stat-number {
             font-size: 2.2rem;
           }
 
+          .stat-label {
+            font-size: 0.875rem;
+          }
+
+          .story-section {
+            padding: 2rem 1.5rem;
+            margin-bottom: 3rem;
+          }
+
           .story-section h2,
           .values-section h2,
           .why-choose-section h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
+          }
+
+          .values-section,
+          .why-choose-section {
+            margin-bottom: 3rem;
+          }
+
+          .values-grid,
+          .why-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .highlight-box {
+            padding: 2rem 1.5rem;
+          }
+
+          .value-card,
+          .why-card {
+            padding: 2rem 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .about-hero h1 {
+            font-size: 1.75rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1rem;
+          }
+
+          .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1.5rem 1rem;
+          }
+
+          .stat-number {
+            font-size: 2rem;
+          }
+
+          .story-section h2,
+          .values-section h2,
+          .why-choose-section h2 {
+            font-size: 1.5rem;
           }
 
           .value-icon,
           .why-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
+          }
+
+          .hero-badge {
+            font-size: 0.813rem;
+            padding: 0.625rem 1.25rem;
           }
         }
       `}</style>
