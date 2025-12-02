@@ -63,7 +63,7 @@ export default function Footer() {
                                 <h4 className="column-title">Contact</h4>
                                 <a href="#" className="footer-link">Get Started</a>
                                 <a href="#" className="footer-link">Schedule Demo</a>
-                                <a href="mailto:flowboticai.team@gmail.com" className="footer-link">flowboticai.team@gmail.com</a>
+                                <a href="mailto:info@genxproai.com" className="footer-link">info@genxproai.com</a>
                                 <a href="tel:+919327178988" className="footer-link">+91 9327178988</a>
                             </div>
                         </div>
@@ -420,3 +420,4 @@ export default function Footer() {
         </>
     );
 }
+
