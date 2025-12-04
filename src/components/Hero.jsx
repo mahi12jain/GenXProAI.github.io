@@ -41,7 +41,7 @@ export default function Hero() {
         className="w-full min-h-screen flex flex-col bg-white"
         style={{
           backgroundImage: 'linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px)',
-          backgroundSize: '30px 30px'
+          backgroundSize: '40px 40px'
         }}
       >
         <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full bg-white/50 backdrop-blur-sm sticky top-0 z-50">
@@ -89,7 +89,7 @@ export default function Hero() {
             </button>
           </div>
 
-          <button className="hidden md:block text-[#050040] font-medium border-b-2 border-[#050040] pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+          <button className="hidden md:block text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
             Contact Us
           </button>
 
