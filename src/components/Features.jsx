@@ -201,69 +201,44 @@ export const SkeletonThree = () => {
 };
 
 export const SkeletonFour = () => {
+  const creativeTools = [
+    {
+      icon: Palette,
+      gradient: "from-purple-500 via-pink-500 to-rose-500",
+      label: "Design",
+    },
+    {
+      icon: Lightbulb,
+      gradient: "from-blue-500 via-cyan-500 to-teal-500",
+      label: "Innovation",
+    },
+    {
+      icon: MessageSquare,
+      gradient: "from-orange-500 via-red-500 to-pink-500",
+      label: "Content",
+    },
+    {
+      icon: GraduationCap,
+      gradient: "from-green-500 via-emerald-500 to-teal-500",
+      label: "Training",
+    },
+  ];
+
   return (
     <div className="relative flex flex-col items-center justify-center p-8 gap-6 h-full overflow-hidden">
-      {/* Creative AI Visualization */}
-      <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-        <motion.div
-          animate={{
-            rotate: [0, 5, 0, -5, 0],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg shadow-lg flex items-center justify-center"
-        >
-          <Palette className="w-12 h-12 text-white" />
-        </motion.div>
-        <motion.div
-          animate={{
-            rotate: [0, -5, 0, 5, 0],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 3,
-            delay: 0.5,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="aspect-square bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg shadow-lg flex items-center justify-center"
-        >
-          <Lightbulb className="w-12 h-12 text-white" />
-        </motion.div>
-        <motion.div
-          animate={{
-            rotate: [0, 5, 0, -5, 0],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 3,
-            delay: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="aspect-square bg-gradient-to-br from-orange-400 to-red-500 rounded-lg shadow-lg flex items-center justify-center"
-        >
-          <MessageSquare className="w-12 h-12 text-white" />
-        </motion.div>
-        <motion.div
-          animate={{
-            rotate: [0, -5, 0, 5, 0],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 3,
-            delay: 1.5,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="aspect-square bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg shadow-lg flex items-center justify-center"
-        >
-          <GraduationCap className="w-12 h-12 text-white" />
-        </motion.div>
+      <div className="grid grid-cols-2 gap-6 w-full max-w-sm">
+        {creativeTools.map((tool, idx) => (
+          <div
+            key={idx}
+            className="relative aspect-square bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl shadow-lg flex items-center justify-center group hover:shadow-xl transition-shadow"
+            style={{
+              backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
+            }}
+          >
+            <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} rounded-xl`} />
+            <tool.icon className="relative w-12 h-12 md:w-16 md:h-16 text-white" />
+          </div>
+        ))}
       </div>
 
       <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-white to-transparent h-full pointer-events-none" />
