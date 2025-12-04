@@ -1,100 +1,133 @@
-export default function Hero({ onOpenContact }) {
+import React, { useState, useEffect, useRef } from 'react';
+
+export default function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close on ESC & click outside (mobile overlay)
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'Escape') setMenuOpen(false);
+    }
+    function onClickOutside(e) {
+      if (!menuRef.current) return;
+      if (menuRef.current.contains(e.target)) return;
+      setMenuOpen(false);
+    }
+
+    if (menuOpen) {
+      document.addEventListener('keydown', onKey);
+      document.addEventListener('click', onClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('click', onClickOutside);
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   return (
-    <section className="hero-section">
-      <div className="hero-content fade-in-up">
-        <h1 className="hero-title">
-          Transform Your Business with <span className="text-gradient"> AI Automation</span>
-        </h1>
-        <p className="hero-subtitle">
-          GenXPro delivers intelligent chatbots, workflow automation, and AI solutions that scale with your business
-        </p>
-        <div className="hero-actions">
-          <button className="btn btn-primary" onClick={onOpenContact}>Get Started</button>
-        </div>
-      </div>
-
+    <>
       <style>{`
-        .hero-section {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          padding: 4rem 2rem;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hero-content {
-          z-index: 2;
-          text-align: center;
-          max-width: 900px;
-          width: 100%;
-        }
-
-        .hero-title {
-          font-size: clamp(2.5rem, 6vw, 4.5rem);
-          margin-bottom: 2rem;
-          line-height: 1.2;
-        }
-
-        .hero-subtitle {
-          font-size: clamp(1.1rem, 3vw, 1.5rem);
-          margin-bottom: 3rem;
-          line-height: 1.6;
-          opacity: 0.9;
-        }
-
-        .hero-actions {
-          display: flex;
-          gap: 1rem;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        /* Mobile: Smaller screens */
-        @media (min-width: 640px) {
-          .hero-section {
-            padding: 6rem 3rem;
-          }
-
-          .hero-content {
-            max-width: 700px;
-          }
-        }
-
-        /* Tablet: Medium screens */
-        @media (min-width: 768px) {
-          .hero-section {
-            padding: 8rem 4rem;
-          }
-
-          .hero-content {
-            max-width: 800px;
-          }
-        }
-
-        /* Desktop: Large screens */
-        @media (min-width: 1024px) {
-          .hero-section {
-            padding: 4rem;
-          }
-
-          .hero-content {
-            max-width: 900px;
-          }
-        }
-
-        /* Extra large screens */
-        @media (min-width: 1440px) {
-          .hero-section {
-            padding: 6rem;
-          }
-
-          .hero-content {
-            max-width: 1000px;
-          }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
       `}</style>
-    </section >
+
+      <section
+        className="w-full min-h-screen flex flex-col bg-white"
+        style={{
+          backgroundImage: 'linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px)',
+          backgroundSize: '30px 30px'
+        }}
+      >
+        <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full bg-white/50 backdrop-blur-sm sticky top-0 z-50">
+          <a href="#" aria-label="GenXProAI home" className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-[#050040]">GenXProAI</span>
+          </a>
+
+          <div
+            id="menu"
+            ref={menuRef}
+            className={[
+              'max-md:absolute max-md:top-0 max-md:left-0 max-md:transition-all max-md:duration-300 max-md:overflow-hidden max-md:h-screen max-md:bg-white max-md:flex-col max-md:justify-center',
+              'flex items-center gap-8 font-medium',
+              menuOpen ? 'max-md:w-full max-md:px-4' : 'max-md:w-0',
+            ].join(' ')}
+            aria-hidden={!menuOpen}
+          >
+            <a href="#" className="hover:text-blue-600 transition-colors">Home</a>
+
+            <div className="relative group flex items-center gap-1 cursor-pointer">
+              <span className="hover:text-blue-600 transition-colors">Solutions</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden className="group-hover:text-blue-600 transition-colors">
+                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <div className="absolute bg-white border border-slate-100 font-normal flex flex-col gap-2 w-max rounded-xl p-4 top-full left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg translate-y-2 group-hover:translate-y-0 z-10">
+                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">AI Agents</a>
+                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Automation</a>
+                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Consulting</a>
+                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Custom Dev</a>
+              </div>
+            </div>
+
+            <a href="#" className="hover:text-blue-600 transition-colors">Case Studies</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">About Us</a>
+
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="md:hidden absolute top-6 right-6 text-slate-800 hover:text-black transition"
+              aria-label="Close menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <button className="hidden md:block text-[#050040] font-medium border-b-2 border-[#050040] pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+            Contact Us
+          </button>
+
+          <button
+            id="open-menu"
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-slate-800 hover:text-black transition"
+            aria-label="Open menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M4 12h16" />
+              <path d="M4 18h16" />
+              <path d="M4 6h16" />
+            </svg>
+          </button>
+        </nav>
+
+        <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-20">
+          <div className="flex items-center gap-2 bg-indigo-50/60 backdrop-blur-sm border border-indigo-200/40 hover:border-indigo-300/60 transition-all rounded-full w-max mx-auto px-5 py-2.5 group cursor-pointer mb-8">
+            <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
+            <span className="text-sm font-semibold text-indigo-700 uppercase tracking-wide">AI-Powered Business Solutions</span>
+          </div>
+
+          <h5 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-black leading-tight mb-6">
+            Intelligent AI Solutions for Modern Enterprises
+          </h5>
+
+          <p className="text-base md:text-lg text-slate-600 mx-auto max-w-2xl text-center mb-10 leading-relaxed">
+            GenXProAI delivers comprehensive AI agency services, from intelligent agents to custom automation, ensuring your business stays ahead of the curve.
+          </p>
+
+          <div className="mx-auto w-full flex items-center justify-center gap-4">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transform hover:-translate-y-0.5">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
