@@ -7,8 +7,8 @@ export function WhyChooseUs() {
         <section className="py-16 md:py-32 bg-white">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-black">
-                        Why Choose GenXProAI
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">
+                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">GenXPro AI</span>
                     </h2>
                     <p className="mt-4 text-neutral-600 max-w-2xl mx-auto">
                         Partner with us to transform your business with cutting-edge AI solutions, expert guidance, and dedicated support every step of the way.
