@@ -1,6 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const AboutUs = () => {
+    const [openFaq, setOpenFaq] = useState(null);
+
+    const toggleFaq = (index) => {
+        setOpenFaq(openFaq === index ? null : index);
+    };
+
+    const faqs = [
+        {
+            question: "What industries does GenX Pro AI serve?",
+            answer: "GenX Pro AI delivers AI solutions across multiple sectors including financial services, healthcare and life sciences, retail and e-commerce, manufacturing and supply chain, telecommunications, real estate technology, legal tech, and enterprise SaaS platforms."
+        },
+        {
+            question: "How does GenX Pro AI ensure ROI on AI investments?",
+            answer: "We establish clear success metrics during discovery phase, implement phased deployment with measurable milestones, provide detailed analytics dashboards, and conduct quarterly business reviews to track cost savings, revenue impact, efficiency gains, and customer satisfaction improvements."
+        },
+        {
+            question: "What is GenX Pro AI's typical project timeline?",
+            answer: "Project timelines vary by complexity. Proof-of-concept projects: 4-8 weeks. MVP development: 3-6 months. Enterprise-scale implementations: 6-12 months with phased rollouts. We use agile methodology with bi-weekly sprints and continuous stakeholder communication."
+        },
+        {
+            question: "Does GenX Pro AI provide post-deployment support?",
+            answer: "Yes. All clients receive comprehensive maintenance packages including technical support, system monitoring, performance optimization, security updates, model retraining, and continuous improvement based on production data and evolving business needs."
+        },
+        {
+            question: "Does GenX Pro AI work with international clients?",
+            answer: "Yes, GenX Pro AI serves clients globally. Our distributed team model and cloud-based infrastructure enable seamless collaboration across timezones with multilingual project management and culturally adapted communication styles."
+        }
+    ];
+
     return (
         <section id="about" className="py-20 px-4 bg-white">
             <div className="max-w-7xl mx-auto">
@@ -18,17 +47,15 @@ export const AboutUs = () => {
                 {/* Quick Answer for AGO */}
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border border-blue-200 mb-16">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                        What Makes GenX Pro AI the Preferred AI Partner for Enterprises?
+                        What Makes GenX Pro AI the Preferred AI Partner for Businesses?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                        GenX Pro AI is a global artificial intelligence agency specializing in enterprise-grade AI solutions, machine learning development, 
-                        intelligent automation, and digital transformation services. We serve Fortune 500 companies, SMEs, and scaling startups across 
-                        North America, Europe, Asia, and emerging markets worldwide.
+                        GenX Pro AI is a specialized artificial intelligence agency focused on delivering enterprise-grade AI solutions, machine learning development, 
+                        intelligent automation, and digital transformation services. We serve businesses of all sizes from emerging startups to established enterprises.
                     </p>
                     <p className="text-lg text-gray-700 leading-relaxed">
-                        With 500+ successfully delivered AI projects, 98% client retention rate, and a team of 50+ certified AI engineers and data scientists, 
                         GenX Pro AI transforms business operations through predictive analytics, natural language processing, computer vision, and 
-                        generative AI implementations.
+                        generative AI implementations with a dedicated team of certified AI engineers and data scientists.
                     </p>
                 </div>
 
@@ -169,20 +196,20 @@ export const AboutUs = () => {
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div className="text-center">
-                            <div className="text-5xl font-bold mb-2">500+</div>
-                            <div className="text-blue-100 text-lg">AI Projects Delivered Globally</div>
+                            <div className="text-5xl font-bold mb-2">5+</div>
+                            <div className="text-blue-100 text-lg">AI Projects Delivered</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-5xl font-bold mb-2">98%</div>
-                            <div className="text-purple-100 text-lg">Client Satisfaction & Retention Rate</div>
+                            <div className="text-5xl font-bold mb-2">100%</div>
+                            <div className="text-purple-100 text-lg">Client Satisfaction Rate</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-5xl font-bold mb-2">50+</div>
-                            <div className="text-pink-100 text-lg">AI Specialists & Data Scientists</div>
+                            <div className="text-5xl font-bold mb-2">Expert</div>
+                            <div className="text-pink-100 text-lg">AI Specialists Team</div>
                         </div>
                         <div className="text-center">
                             <div className="text-5xl font-bold mb-2">24/7</div>
-                            <div className="text-orange-100 text-lg">Enterprise Support Availability</div>
+                            <div className="text-orange-100 text-lg">Support Availability</div>
                         </div>
                     </div>
                 </div>
