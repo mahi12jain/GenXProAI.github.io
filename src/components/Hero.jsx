@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ConsultationModal from './consulationModal';
 
 export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
   const menuRef = useRef(null);
 
   // Close on ESC & click outside (mobile overlay)
@@ -60,22 +62,8 @@ export default function Hero() {
             aria-hidden={!menuOpen}
           >
             <a href="#" className="hover:text-blue-600 transition-colors">Home</a>
-
-            <div className="relative group flex items-center gap-1 cursor-pointer">
-              <span className="hover:text-blue-600 transition-colors">Solutions</span>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden className="group-hover:text-blue-600 transition-colors">
-                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <div className="absolute bg-white border border-slate-100 font-normal flex flex-col gap-2 w-max rounded-xl p-4 top-full left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-lg translate-y-2 group-hover:translate-y-0 z-10">
-                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">AI Agents</a>
-                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Automation</a>
-                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Consulting</a>
-                <a href="#" className="hover:translate-x-1 hover:text-blue-600 transition-all">Custom Dev</a>
-              </div>
-            </div>
-
-            <a href="#" className="hover:text-blue-600 transition-colors">Case Studies</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">About Us</a>
+            <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
+            <a href="#about" className="hover:text-blue-600 transition-colors">About Us</a>
 
             <button
               onClick={() => setMenuOpen(false)}
@@ -89,7 +77,7 @@ export default function Hero() {
             </button>
           </div>
 
-          <button className="hidden md:block text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+          <button onClick={() => setModalVisible(true)} className="hidden md:block text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
             Contact Us
           </button>
 
@@ -107,7 +95,7 @@ export default function Hero() {
           </button>
         </nav>
 
-        <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-20">
+        <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-20 pt-32">
           <div className="flex items-center gap-2 bg-indigo-50/60 backdrop-blur-sm border border-indigo-200/40 hover:border-indigo-300/60 transition-all rounded-full w-max mx-auto px-5 py-2.5 group cursor-pointer mb-8">
             <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
             <span className="text-sm font-semibold text-indigo-700 uppercase tracking-wide">AI-Powered Business Solutions</span>
@@ -122,12 +110,13 @@ export default function Hero() {
           </p>
 
           <div className="mx-auto w-full flex items-center justify-center gap-4">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transform hover:-translate-y-0.5">
+            <button onClick={() => setModalVisible(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transform hover:-translate-y-0.5">
               Get Started
             </button>
           </div>
         </div>
       </section>
+      <ConsultationModal visible={modalVisible} onClose={() => setModalVisible(false)} />
     </>
   );
 }
