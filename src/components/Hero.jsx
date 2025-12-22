@@ -51,6 +51,7 @@ export default function Hero() {
             <span className="text-2xl font-bold text-[#050040]">GenXProAI</span>
           </a>
 
+
           <div
             id="menu"
             ref={menuRef}
@@ -152,3 +153,6 @@ export default function Hero() {
     </>
   );
 }
+
+
+
