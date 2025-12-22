@@ -3,16 +3,16 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Sparkles } from 'lucide
 
 export const Footer = () => {
     const socialLinks = [
-        { icon: <Linkedin className="w-6 h-6" />, href: "#", label: "LinkedIn" },
-        { icon: <Twitter className="w-6 h-6" />, href: "#", label: "Twitter" },
-        { icon: <Github className="w-6 h-6" />, href: "#", label: "GitHub" },
+        { icon: <Linkedin className="w-6 h-6" />, href: "https://www.linkedin.com/company/gen-x-pro-ai/posts/?feedView=all", label: "LinkedIn" },
+        // { icon: <Twitter className="w-6 h-6" />, href: "#", label: "Twitter" },
+        { icon: <Instagram className="w-6 h-6" />, href: "https://www.instagram.com/genxproai/", label: "Instagram" },
     ];
 
     const navLinks = [
         { label: "Home", href: "#home" },
         { label: "Features", href: "#features" },
         { label: "About Us", href: "#about" },
-        { label: "Services", href: "#services" },
+        // { label: "Services", href: "#services" },    
         { label: "Contact", href: "#contact" },
     ];
 
