@@ -48,8 +48,9 @@ export default function Hero() {
       >
         <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full bg-white/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
           <a href="#" aria-label="GenXProAI home" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#050040]">GenXProAI</span>
-          </a>
+            <span className="text-2xl font-bold text-[#050040] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">GenXProAI</span>
+          </a
+
 
           <div
             id="menu"
@@ -120,3 +121,4 @@ export default function Hero() {
     </>
   );
 }
+
