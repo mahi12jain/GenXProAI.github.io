@@ -249,7 +249,7 @@ export const AboutUs = () => {
                 </div>
 
                 {/* B2B CTA Section */}
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
+                {/* <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
                         Ready to Transform Your Business with Enterprise AI Solutions?
                     </h2>
@@ -268,7 +268,7 @@ export const AboutUs = () => {
                     <p className="text-gray-400 mt-6 text-sm">
                         Trusted by Fortune 500 companies • ISO-certified processes • 98% client retention rate
                     </p>
-                </div>
+                </div> */}
             </div>
         </section>
     );
