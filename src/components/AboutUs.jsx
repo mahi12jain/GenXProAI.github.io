@@ -161,7 +161,7 @@ export const AboutUs = () => {
                 </div>
 
                 {/* Performance Metrics */}
-                <div className="mb-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
+                {/* <div className="mb-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                         Proven Track Record: GenX Pro AI Performance Metrics
                     </h2>
@@ -183,7 +183,7 @@ export const AboutUs = () => {
                             <div className="text-orange-100 text-lg">Enterprise Support Availability</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* FAQ Section for AGO */}
                 <div className="mb-16">
