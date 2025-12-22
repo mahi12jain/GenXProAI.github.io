@@ -96,24 +96,58 @@ export default function Hero() {
         </nav>
 
         <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-20 pt-32">
-          <div className="flex items-center gap-2 bg-indigo-50/60 backdrop-blur-sm border border-indigo-200/40 hover:border-indigo-300/60 transition-all rounded-full w-max mx-auto px-5 py-2.5 group cursor-pointer mb-8">
-            <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-            <span className="text-sm font-semibold text-indigo-700 uppercase tracking-wide">AI-Powered Business Solutions</span>
-          </div>
+            <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-24 pt-36">
+              <div className="flex items-center gap-2 bg-indigo-50/70 backdrop-blur-sm border border-indigo-200/60 rounded-full w-max mx-auto px-5 py-2.5 mb-8">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500 text-white text-xs shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
+                    <path d="M12 2v4" />
+                    <path d="m2 12 2 2 4-4" />
+                    <path d="m14 12 4-4 6 6" />
+                    <path d="M12 22v-4" />
+                    <path d="m12 12 4 4-4 4-4-4 4-4Z" />
+                  </svg>
+                </span>
+                <span className="text-sm font-semibold text-indigo-700 uppercase tracking-wide">AI-Powered Business Solutions</span>
+              </div>
 
-          <h5 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-black leading-tight mb-6">
-            Intelligent AI Solutions for Modern Enterprises
-          </h5>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-[#050040] leading-tight mb-6">
+                Enterprise AI Solutions for{' '}
+                <span className="bg-gradient-to-r from-[#5f4dff] via-[#7d4dff] to-[#e547d0] text-transparent bg-clip-text">
+                  Business Automation & Growth
+                </span>
+              </h1>
 
-          <p className="text-base md:text-lg text-slate-600 mx-auto max-w-2xl text-center mb-10 leading-relaxed">
-            GenXProAI delivers comprehensive AI agency services, from intelligent agents to custom automation, ensuring your business stays ahead of the curve.
-          </p>
+              <p className="text-base md:text-lg text-slate-600 mx-auto max-w-3xl text-center mb-12 leading-relaxed">
+                Transform your business with custom AI development, machine learning solutions, and intelligent automation. GenXProAI delivers proven artificial intelligence strategies that reduce costs, increase efficiency, and drive measurable ROI.
+              </p>
 
-          <div className="mx-auto w-full flex items-center justify-center gap-4">
-            <button onClick={() => setModalVisible(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transform hover:-translate-y-0.5">
-              Get Started
-            </button>
-          </div>
+              <div className="flex flex-wrap items-center justify-center gap-5 text-sm md:text-base font-medium text-slate-700">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                      <path d="m5 13 4 4L19 7" />
+                    </svg>
+                  </span>
+                  5+ Projects Delivered
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                      <path d="m5 13 4 4L19 7" />
+                    </svg>
+                  </span>
+                  100% Client Satisfaction
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                      <path d="m5 13 4 4L19 7" />
+                    </svg>
+                  </span>
+                  24/7 Expert Support
+                </div>
+              </div>
+            </div>
         </div>
       </section>
       <ConsultationModal visible={modalVisible} onClose={() => setModalVisible(false)} />
