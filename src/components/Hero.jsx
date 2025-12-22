@@ -32,6 +32,16 @@ export default function Hero() {
     };
   }, [menuOpen]);
 
+  const menuClasses = [
+    'flex items-center gap-8 font-medium',
+    'max-md:fixed max-md:inset-0 max-md:z-[60] max-md:bg-white max-md:flex-col max-md:justify-center max-md:items-center',
+    'max-md:transition-all max-md:duration-300 max-md:ease-out'
+  ];
+
+  const mobileMenuState = menuOpen
+    ? 'max-md:opacity-100 max-md:pointer-events-auto'
+    : 'max-md:opacity-0 max-md:pointer-events-none';
+
   return (
     <>
       <style>{`
@@ -55,16 +65,12 @@ export default function Hero() {
           <div
             id="menu"
             ref={menuRef}
-            className={[
-              'max-md:absolute max-md:top-0 max-md:left-0 max-md:transition-all max-md:duration-300 max-md:overflow-hidden max-md:h-screen max-md:bg-white max-md:flex-col max-md:justify-center',
-              'flex items-center gap-8 font-medium',
-              menuOpen ? 'max-md:w-full max-md:px-4' : 'max-md:w-0',
-            ].join(' ')}
+            className={[...menuClasses, mobileMenuState].join(' ')}
             aria-hidden={!menuOpen}
           >
-            <a href="#" className="hover:text-blue-600 transition-colors">Home</a>
-            <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
-            <a href="#about" className="hover:text-blue-600 transition-colors">About Us</a>
+            <a href="#" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</a>
+            <a href="#features" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Features</a>
+            <a href="#about" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>About Us</a>
 
             <button
               onClick={() => setMenuOpen(false)}
