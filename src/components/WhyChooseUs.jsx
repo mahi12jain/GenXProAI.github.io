@@ -7,8 +7,8 @@ export function WhyChooseUs() {
         <section className="py-16 md:py-32 bg-white">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">
-                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">GenXPro AI</span>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-[#050040]">
+                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">GenXPro AI</span>
                     </h2>
                     <p className="mt-4 text-neutral-600 max-w-2xl mx-auto">
                         Partner with us to transform your business with cutting-edge AI solutions, expert guidance, and dedicated support every step of the way.
@@ -21,7 +21,7 @@ export function WhyChooseUs() {
                                 <Brain className="size-6 text-blue-600" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">AI Expertise</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">AI Expertise</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -34,10 +34,10 @@ export function WhyChooseUs() {
                     <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
                         <CardHeader className="pb-3">
                             <CardDecorator>
-                                <TrendingUp className="size-6 text-green-600" aria-hidden />
+                                <TrendingUp className="size-6 text-teal-600" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">Proven Results</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">Proven Results</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -50,10 +50,10 @@ export function WhyChooseUs() {
                     <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
                         <CardHeader className="pb-3">
                             <CardDecorator>
-                                <Shield className="size-6 text-purple-600" aria-hidden />
+                                <Shield className="size-6 text-indigo-600" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">Secure & Compliant</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">Secure & Compliant</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -66,10 +66,10 @@ export function WhyChooseUs() {
                     <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
                         <CardHeader className="pb-3">
                             <CardDecorator>
-                                <Users className="size-6 text-orange-600" aria-hidden />
+                                <Users className="size-6 text-violet-600" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">Tailored Solutions</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">Tailored Solutions</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -82,10 +82,10 @@ export function WhyChooseUs() {
                     <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
                         <CardHeader className="pb-3">
                             <CardDecorator>
-                                <Headphones className="size-6 text-pink-600" aria-hidden />
+                                <Headphones className="size-6 text-indigo-500" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">24/7 Support</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">24/7 Support</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -101,7 +101,7 @@ export function WhyChooseUs() {
                                 <Award className="size-6 text-cyan-600" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">Industry Recognition</h3>
+                            <h3 className="mt-6 font-semibold text-lg text-[#050040]">Industry Recognition</h3>
                         </CardHeader>
 
                         <CardContent>
@@ -120,7 +120,7 @@ const CardDecorator = ({ children }) => (
     <div aria-hidden className="relative mx-auto size-36" style={{
         maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%)'
     }}>
-        <div 
+        <div
             className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px] opacity-5"
         />
         <div className="bg-white absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l border-neutral-200 rounded-sm">

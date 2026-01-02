@@ -40,9 +40,9 @@ export function Features() {
   return (
     <div id="features" className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black">
+        <h2 className="text-4xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-semibold text-[#050040]">
           Comprehensive AI Solutions for Your Business
-        </h4>
+        </h2>
 
         <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-600 text-center font-normal">
           From intelligent chatbots to complete business automation, we provide end-to-end AI solutions with training and ongoing support to ensure your success.
@@ -74,7 +74,7 @@ const FeatureCard = ({ children, className }) => {
 
 const FeatureTitle = ({ children }) => {
   return (
-    <p className="max-w-5xl mx-auto text-left tracking-tight text-black text-xl md:text-2xl md:leading-snug">
+    <p className="max-w-5xl mx-auto text-left tracking-tight text-[#050040] text-xl md:text-2xl md:leading-snug">
       {children}
     </p>
   );
@@ -130,9 +130,9 @@ export const SkeletonOne = () => {
 export const SkeletonTwo = () => {
   const processes = [
     { icon: Cog, label: "Data Entry", color: "bg-blue-500" },
-    { icon: MessageSquare, label: "Communication", color: "bg-purple-500" },
-    { icon: Lightbulb, label: "Analytics", color: "bg-green-500" },
-    { icon: Palette, label: "Reports", color: "bg-orange-500" },
+    { icon: MessageSquare, label: "Communication", color: "bg-indigo-500" },
+    { icon: Lightbulb, label: "Analytics", color: "bg-teal-500" },
+    { icon: Palette, label: "Reports", color: "bg-violet-500" },
   ];
 
   return (
@@ -205,7 +205,7 @@ export const SkeletonFour = () => {
   const creativeTools = [
     {
       icon: Palette,
-      color: "text-purple-600",
+      color: "text-indigo-600",
       label: "Design",
     },
     {
@@ -215,12 +215,12 @@ export const SkeletonFour = () => {
     },
     {
       icon: MessageSquare,
-      color: "text-orange-600",
+      color: "text-violet-600",
       label: "Content",
     },
     {
       icon: GraduationCap,
-      color: "text-green-600",
+      color: "text-slate-600",
       label: "Training",
     },
   ];
@@ -275,8 +275,8 @@ export const SkeletonFive = () => {
   return (
     <div className="relative flex flex-col items-center justify-center py-8 px-4 h-full overflow-hidden">
       <div className="text-center mb-6">
-        <motion.p 
-          className="font-bold text-xl md:text-2xl text-black mb-2"
+        <motion.p
+          className="font-bold text-xl md:text-2xl text-[#050040] mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -297,12 +297,12 @@ export const SkeletonFive = () => {
           </span>
         </motion.p>
         <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-          Seamless global operations with AI solutions deployed across continents. 
+          Seamless global operations with AI solutions deployed across continents.
           Our distributed network ensures low-latency support and localized expertise.
         </p>
       </div>
       <WorldMap dots={dots} lineColor="#3b82f6" />
-      
+
       {/* Location Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 w-full max-w-3xl">
         {[
