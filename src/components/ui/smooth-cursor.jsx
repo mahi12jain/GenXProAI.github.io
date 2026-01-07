@@ -64,6 +64,7 @@ export function SmoothCursor({
   }
 }) {
   const [isMoving, setIsMoving] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const lastMousePos = useRef({ x: 0, y: 0 })
   const velocity = useRef({ x: 0, y: 0 })
   const lastUpdateTime = useRef(Date.now())
@@ -84,10 +85,23 @@ export function SmoothCursor({
   })
 
   useEffect(() => {
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+    }
+
+    if (isTouchDevice()) {
+      return
+    }
+
+    // Only set visible if not touch device
+    setIsVisible(true);
+
     const updateVelocity = (currentPos) => {
       const currentTime = Date.now()
       const deltaTime = currentTime - lastUpdateTime.current
-
+      // ... rest of logic
       if (deltaTime > 0) {
         velocity.current = {
           x: (currentPos.x - lastMousePos.current.x) / deltaTime,
@@ -151,6 +165,8 @@ export function SmoothCursor({
       if (rafId) cancelAnimationFrame(rafId)
     };
   }, [cursorX, cursorY, rotation, scale])
+
+  if (!isVisible) return null;
 
   return (
     <motion.div

@@ -1,18 +1,17 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Github, Sparkles } from 'lucide-react';
 
 export const Footer = () => {
     const socialLinks = [
         { icon: <Linkedin className="w-6 h-6" />, href: "https://www.linkedin.com/company/gen-x-pro-ai/posts/?feedView=all", label: "LinkedIn" },
-        { icon: <Twitter className="w-6 h-6" />, href: "#", label: "Twitter" },
-        // { icon: <Instagram className="w-6 h-6" />, href: "https://www.instagram.com/genxproai/", label: "Instagram" },
+        { icon: <Instagram className="w-6 h-6" />, href: "https://www.instagram.com/genxproai/", label: "Instagram" },
     ];
 
     const navLinks = [
         { label: "Home", href: "#home" },
         { label: "Features", href: "#features" },
         { label: "About Us", href: "#about" },
-        { label: "Services", href: "#services" },    
+        { label: "Services", href: "#services" },
         { label: "Contact", href: "#contact" },
     ];
 
@@ -80,7 +79,7 @@ export const Footer = () => {
                 </div>
 
                 {/* Large background text */}
-                <div 
+                <div
                     className="bg-gradient-to-b from-black/20 via-black/10 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-40 md:bottom-32 font-extrabold tracking-tighter pointer-events-none select-none text-center px-4"
                     style={{
                         fontSize: 'clamp(3rem, 12vw, 10rem)',

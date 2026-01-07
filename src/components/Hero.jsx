@@ -14,6 +14,8 @@ export default function Hero() {
     function onClickOutside(e) {
       if (!menuRef.current) return;
       if (menuRef.current.contains(e.target)) return;
+      // Prevent closing if the trigger button was clicked (though stopPropagation should handle it)
+      if (e.target.closest('#open-menu')) return;
       setMenuOpen(false);
     }
 
@@ -32,15 +34,11 @@ export default function Hero() {
     };
   }, [menuOpen]);
 
-  const menuClasses = [
-    'flex items-center gap-8 font-medium',
-    'max-md:fixed max-md:inset-0 max-md:z-[60] max-md:bg-white max-md:flex-col max-md:justify-center max-md:items-center',
-    'max-md:transition-all max-md:duration-300 max-md:ease-out'
+  const navLinks = [
+    { label: 'Home', href: '#' },
+    { label: 'Features', href: '#features' },
+    { label: 'About Us', href: '#about' },
   ];
-
-  const mobileMenuState = menuOpen
-    ? 'max-md:opacity-100 max-md:pointer-events-auto'
-    : 'max-md:opacity-0 max-md:pointer-events-none';
 
   return (
     <>
@@ -51,51 +49,153 @@ export default function Hero() {
           backgroundSize: '40px 40px'
         }}
       >
-        <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full bg-white/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <nav className="flex items-center justify-between p-4 md:px-8 lg:px-16 xl:px-24 w-full bg-white/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
           <a href="#" aria-label="GenXProAI home" className="flex items-center gap-2">
             <span className="text-2xl font-bold text-[#050040]">GenXProAI</span>
           </a>
 
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8 font-medium">
+            {navLinks.map((link) => (
+              <a key={link.label} href={link.href} className="hover:text-blue-600 transition-colors">
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-          <div
-            id="menu"
-            ref={menuRef}
-            className={[...menuClasses, mobileMenuState].join(' ')}
-            aria-hidden={!menuOpen}
-          >
-            <a href="#" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#features" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Features</a>
-            <a href="#about" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>About Us</a>
-
+          {/* Desktop CTA */}
+          <div className="flex items-center gap-4 max-md:hidden">
+            <button onClick={() => setModalVisible(true)} className="text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+              Contact Us
+            </button>
             <button
-              onClick={() => setMenuOpen(false)}
-              className="md:hidden absolute top-6 right-6 text-slate-800 hover:text-black transition"
-              aria-label="Close menu"
+              onClick={() => setModalVisible(true)}
+              className="px-5 py-2.5 rounded-full bg-[#050040] text-white font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
+              Get Started
             </button>
           </div>
 
-          <button onClick={() => setModalVisible(true)} className="hidden md:block text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
-            Contact Us
-          </button>
-
+          {/* Mobile Menu Toggle */}
           <button
             id="open-menu"
-            onClick={() => setMenuOpen(true)}
-            className="md:hidden text-slate-800 hover:text-black transition"
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen(true);
+            }}
+            className="md:hidden text-slate-800 hover:text-black transition p-2"
             aria-label="Open menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M4 12h16" />
               <path d="M4 18h16" />
               <path d="M4 6h16" />
             </svg>
           </button>
         </nav>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          id="menu"
+          ref={menuRef}
+          className={`
+            fixed inset-0 z-[60] md:hidden
+            transition-all duration-500 ease-out
+            ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          `}
+          inert={!menuOpen ? true : undefined}
+        >
+          {/* Background with gradient */}
+          <div
+            className={`
+              absolute inset-0 bg-gradient-to-br from-[#050040] via-indigo-900 to-slate-900
+              transition-transform duration-500 ease-out
+              ${menuOpen ? 'scale-100' : 'scale-95'}
+            `}
+          />
+
+          {/* Decorative elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-32 right-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Close Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen(false);
+            }}
+            className={`
+              absolute top-6 right-6 z-[70] p-3 rounded-full bg-white/10 backdrop-blur-sm
+              text-white hover:bg-white/20 transition-all duration-300 cursor-pointer
+              ${menuOpen ? 'rotate-0 opacity-100' : 'rotate-90 opacity-0'}
+            `}
+            style={{ transitionDelay: menuOpen ? '300ms' : '0ms' }}
+            aria-label="Close menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+
+          {/* Menu Content */}
+          <div className="relative h-full flex flex-col items-center justify-center px-8">
+            {/* Logo */}
+            <div
+              className={`
+                absolute top-6 left-6 transition-all duration-500
+                ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}
+              `}
+              style={{ transitionDelay: menuOpen ? '200ms' : '0ms' }}
+            >
+              <span className="text-2xl font-bold text-white">GenXProAI</span>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex flex-col items-center gap-6">
+              {navLinks.map((link, index) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`
+                    text-3xl font-semibold text-white hover:text-blue-300
+                    transition-all duration-500 ease-out
+                    ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
+                  `}
+                  style={{ transitionDelay: menuOpen ? `${150 + index * 75}ms` : '0ms' }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => { setMenuOpen(false); setModalVisible(true); }}
+              className={`
+                mt-12 px-8 py-4 rounded-full bg-white text-[#050040] font-bold text-lg
+                hover:bg-blue-100 transition-all duration-500 shadow-xl
+                ${menuOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'}
+              `}
+              style={{ transitionDelay: menuOpen ? '400ms' : '0ms' }}
+            >
+              Get Started
+            </button>
+
+            {/* Social/Contact Info */}
+            <div
+              className={`
+                absolute bottom-10 left-0 right-0 text-center text-white/60 text-sm
+                transition-all duration-500
+                ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
+              `}
+              style={{ transitionDelay: menuOpen ? '500ms' : '0ms' }}
+            >
+              info@genxproai.com
+            </div>
+          </div>
+        </div>
 
         <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-24 pt-36">
           <div className="flex items-center gap-2 bg-indigo-50/70 backdrop-blur-sm border border-indigo-200/60 rounded-full w-max mx-auto px-5 py-2.5 mb-8">
