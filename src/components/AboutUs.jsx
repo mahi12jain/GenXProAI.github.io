@@ -42,16 +42,15 @@ export default function AboutUs() {
       <div className="container">
         {/* Hero Section */}
         <div className="about-hero">
-          <div className="hero-badge">🚀 Leading AI Innovation</div>
+          <div className="hero-badge">🚀 AI Consulting | Chatbot Development | Machine Learning Services</div>
           <div className="hero-content">
-            <h1>About <span className="gradient-text">GenX Pro AI</span></h1>
+            <h1>AI Solutions & <span className="gradient-text">Chatbot Development Services</span></h1>
             <p className="hero-subtitle">
-              We're not just another AI consultancy. We're builders, problem-solvers, and your transformation partner.
+              Leading AI consulting company specializing in custom chatbot development, machine learning solutions, and intelligent automation for businesses worldwide.
             </p>
             <div className="hero-description">
               <p>
-                Founded with a simple mission: make enterprise-grade AI accessible and practical for businesses of all sizes. 
-                We believe AI should work for you, not the other way around.
+                GenX Pro AI delivers enterprise AI services including conversational AI chatbots, natural language processing (NLP), computer vision, and predictive analytics. Transform your business with our cutting-edge artificial intelligence solutions.
               </p>
             </div>
           </div>
@@ -70,41 +69,34 @@ export default function AboutUs() {
         {/* Story Section */}
         <div className="story-section">
           <div className="story-content">
-            <h2>Our <span className="gradient-text">Story</span></h2>
+            <h2>AI Consulting & <span className="gradient-text">Chatbot Experts</span></h2>
             <p>
-              GenX Pro AI was born from a vision to democratize artificial intelligence. We watched brilliant businesses 
-              struggle with AI adoption—not because the technology wasn't powerful, but because it wasn't accessible or 
-              practical for real-world operations.
+              GenX Pro AI specializes in artificial intelligence consulting, custom chatbot development, and intelligent automation services. We help businesses deploy AI-powered chatbots, implement machine learning models, and automate workflows using conversational AI technology.
             </p>
             <p>
-              As a startup, we're agile, innovative, and hungry to prove ourselves. Our founding team brings together 
-              expertise in AI, software engineering, and business strategy. We've worked on AI projects across industries 
-              and learned that successful AI isn't about the fanciest models—it's about solving real business problems 
-              with practical, scalable solutions.
+              Our AI solutions include: customer service chatbots, voice assistants, AI-powered analytics, computer vision systems, and natural language processing (NLP) applications. From chatbot design to full-scale AI implementation, we deliver measurable ROI.
             </p>
             <p>
-              That's why we built GenX Pro AI. To bridge the gap between cutting-edge AI and practical business needs. 
-              To transform how companies operate. To make AI a competitive advantage, not a complicated experiment. 
-              We're small enough to care deeply about every client, yet capable enough to deliver enterprise-grade solutions.
+              Whether you need a WhatsApp chatbot, website chatbot, or enterprise AI system—we build custom AI solutions that scale. Our expertise in GPT-4, Claude, and open-source LLMs ensures cutting-edge chatbot development for customer support, sales automation, and business intelligence.
             </p>
           </div>
           <div className="story-highlight">
             <div className="highlight-box">
-              <div className="highlight-icon">💼</div>
-              <h3>Our Approach</h3>
-              <p>Audit → Strategy → Implementation → Optimization. Simple. Proven. Effective.</p>
+              <div className="highlight-icon">🤖</div>
+              <h3>AI Services We Provide</h3>
+              <p>Chatbot Development | AI Consulting | Machine Learning | Automation</p>
               <div className="approach-features">
                 <div className="feature">
                   <span className="check">✓</span>
-                  <span>Personalized Solutions</span>
+                  <span>Custom AI Chatbots</span>
                 </div>
                 <div className="feature">
                   <span className="check">✓</span>
-                  <span>Rapid Deployment</span>
+                  <span>NLP & Voice AI</span>
                 </div>
                 <div className="feature">
                   <span className="check">✓</span>
-                  <span>Ongoing Support</span>
+                  <span>24/7 AI Support</span>
                 </div>
               </div>
             </div>
