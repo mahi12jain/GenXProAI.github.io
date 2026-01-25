@@ -154,11 +154,11 @@ export function WhyChooseUs() {
                 <div className="mt-20 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-10 text-white">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         <div>
-                            <div className="text-4xl font-bold mb-2">50+</div>
+                            <div className="text-4xl font-bold mb-2">10+</div>
                             <div className="text-slate-300">AI Projects Delivered</div>
                         </div>
                         <div>
-                            <div className="text-4xl font-bold mb-2">95%</div>
+                            <div className="text-4xl font-bold mb-2">90%</div>
                             <div className="text-slate-300">Client Retention Rate</div>
                         </div>
                         <div>
@@ -166,7 +166,7 @@ export function WhyChooseUs() {
                             <div className="text-slate-300">Technical Support</div>
                         </div>
                         <div>
-                            <div className="text-4xl font-bold mb-2">15+</div>
+                            <div className="text-4xl font-bold mb-2">10+</div>
                             <div className="text-slate-300">Industries Served</div>
                         </div>
                     </div>
