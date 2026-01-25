@@ -117,14 +117,14 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-[#050040] leading-tight mb-6">
-            Enterprise AI Solutions for{' '}
+            Enterprise AI Automation & Custom LLM Solutions  for{' '}
             <span className="bg-gradient-to-r from-[#5f4dff] via-[#7d4dff] to-[#e547d0] text-transparent bg-clip-text">
-              Business Automation & Growth
+             & Business Automation 
             </span>
           </h1>
 
           <p className="text-base md:text-lg text-slate-600 mx-auto max-w-3xl text-center mb-12 leading-relaxed">
-            Transform your business with custom AI development, machine learning solutions, and intelligent automation. GenXProAI delivers proven artificial intelligence strategies that reduce costs, increase efficiency, and drive measurable ROI.
+            GenX Pro AI delivers custom AI chatbots, enterprise LLM implementations, and workflow automation using n8n and Zapier for businesses in [Healthcare,Finance,IT Industry].
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5 text-sm md:text-base font-medium text-slate-700">
@@ -159,6 +159,7 @@ export default function Hero() {
     </>
   );
 }
+
 
 
 
