@@ -6,22 +6,22 @@ import WorldMap from "./ui/world-map";
 export function Features() {
   const features = [
     {
-      title: "AI Chat Solutions",
+      title: "Custom AI Chatbot Development",
       description:
-        "Intelligent conversational AI that understands your business needs and delivers exceptional customer experiences.",
+        "Build RAG-powered chatbots trained on your business data using LangChain and vector databases (Pinecone, Chroma). Reduce customer support costs by 70%...",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 md:col-span-4 lg:col-span-4 border-b md:border-r border-neutral-200",
     },
     {
-      title: "Business Process Automation",
+      title: "n8n & Zapier AI Automation",
       description:
         "Streamline operations and boost efficiency with cutting-edge AI-powered automation tailored to your workflow.",
       skeleton: <SkeletonTwo />,
       className: "col-span-1 md:col-span-2 lg:col-span-2 border-b border-neutral-200",
     },
     {
-      title: "AI Strategy & Implementation",
+      title: "Custom LLM Implementation",
       description:
         "From vision to execution, we guide you through every step of your AI transformation journey.",
       skeleton: <SkeletonThree />,
@@ -29,7 +29,7 @@ export function Features() {
         "col-span-1 md:col-span-3 lg:col-span-3 border-b md:border-r border-neutral-200",
     },
     {
-      title: "Creative & Marketing AI",
+      title: "AI Agent Development & Training",
       description:
         "Elevate your brand with AI-driven creative solutions that captivate audiences and drive results.",
       skeleton: <SkeletonFour />,
@@ -40,12 +40,12 @@ export function Features() {
   return (
     <div id="features" className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black">
-          Comprehensive AI Solutions for Your Business
-        </h4>
+        <h1 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black">
+          Custom AI Chatbot, LLM Implementation & Automation Services
+        </h1>
 
         <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-600 text-center font-normal">
-          From intelligent chatbots to complete business automation, we provide end-to-end AI solutions with training and ongoing support to ensure your success.
+         Deploy RAG-powered chatbots, fine-tuned LLMs, and n8n/Zapier automation. Trusted by 50+ businesses to reduce operational costs by 60%...
         </p>
       </div>
 
@@ -72,13 +72,11 @@ const FeatureCard = ({ children, className }) => {
   );
 };
 
-const FeatureTitle = ({ children }) => {
-  return (
-    <p className="max-w-5xl mx-auto text-left tracking-tight text-black text-xl md:text-2xl md:leading-snug">
-      {children}
-    </p>
-  );
+const FeatureTitle = ({ children, as = "p" }) => {
+  const Tag = as;
+  return <Tag className="...">{children}</Tag>;
 };
+
 
 const FeatureDescription = ({ children }) => {
   return (
