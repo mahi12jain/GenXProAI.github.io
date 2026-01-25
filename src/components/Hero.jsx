@@ -127,7 +127,7 @@ export default function Hero() {
             GenX Pro AI delivers custom AI chatbots, enterprise LLM implementations, and workflow automation using n8n and Zapier for businesses in [Healthcare,Finance,IT Industry].
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-5 text-sm md:text-base font-medium text-slate-700">
+          {/* <div className="flex flex-wrap items-center justify-center gap-5 text-sm md:text-base font-medium text-slate-700">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
@@ -152,13 +152,14 @@ export default function Hero() {
               </span>
               24/7 Expert Support
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <ConsultationModal visible={modalVisible} onClose={() => setModalVisible(false)} />
     </>
   );
 }
+
 
 
 
