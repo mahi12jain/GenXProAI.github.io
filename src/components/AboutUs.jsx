@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, CheckCircle } from 'lucide-react';
 
-function AboutUs() {
+export function AboutUs() {
   const [openFaq, setOpenFaq] = useState(null);
 
   const faqs = [
