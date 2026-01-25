@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, CheckCircle } from 'lucide-react';
 
-export default function AboutUs() {
+function AboutUs() {
   const [openFaq, setOpenFaq] = useState(null);
 
   const faqs = [
@@ -139,7 +139,7 @@ export default function AboutUs() {
         {/* CTA */}
         <div className="border border-slate-200 rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Let's Build Your AI Advantage
+            Let&apos;s Build Your AI Advantage
           </h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Book a free strategy call and explore how AI can transform your operations.
@@ -153,3 +153,5 @@ export default function AboutUs() {
     </section>
   );
 }
+
+export default AboutUs;
