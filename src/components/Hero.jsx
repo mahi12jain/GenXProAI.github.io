@@ -119,7 +119,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-[#050040] leading-tight mb-6">
             Enterprise AI Automation & Custom LLM Solutions  for{' '}
             <span className="bg-gradient-to-r from-[#5f4dff] via-[#7d4dff] to-[#e547d0] text-transparent bg-clip-text">
-             & Business Automation 
+             For Business Growth 
             </span>
           </h1>
 
@@ -159,6 +159,7 @@ export default function Hero() {
     </>
   );
 }
+
 
 
 
