@@ -1,130 +1,197 @@
 import React from 'react';
-import { Card, CardContent, CardHeader } from './ui/card';
-import { Brain, Shield, Headphones, TrendingUp, Users, Award } from 'lucide-react';
+import { Zap, Clock, Target, Shield, Code, Sparkles } from 'lucide-react';
 
 export function WhyChooseUs() {
+    const benefits = [
+        {
+            icon: Zap,
+            color: 'blue',
+            title: 'Rapid Deployment',
+            description: 'Launch your AI solution in 2-4 weeks, not months. We use proven frameworks and pre-built components to accelerate development without compromising quality.',
+            metric: '2-4 weeks',
+            metricLabel: 'Average deployment'
+        },
+        {
+            icon: Target,
+            color: 'purple',
+            title: 'ROI-Focused Approach',
+            description: 'Every solution is designed to deliver measurable business value. Our clients see an average 300% ROI within 6 months through cost reduction and efficiency gains.',
+            metric: '300%',
+            metricLabel: 'Average ROI'
+        },
+        {
+            icon: Code,
+            color: 'green',
+            title: 'Production-Ready Code',
+            description: 'Enterprise-grade implementations using LangChain, GPT-4, Claude, and industry-standard frameworks. No prototypes—only scalable, maintainable solutions.',
+            metric: '99.9%',
+            metricLabel: 'Uptime guarantee'
+        },
+        {
+            icon: Shield,
+            color: 'orange',
+            title: 'Data Security First',
+            description: 'SOC 2 compliant infrastructure, end-to-end encryption, and GDPR adherence. Your proprietary data stays secure with on-premise deployment options available.',
+            metric: 'SOC 2',
+            metricLabel: 'Certified'
+        },
+        {
+            icon: Clock,
+            color: 'pink',
+            title: 'Comprehensive Support',
+            description: '90-day post-launch support included with every project. Ongoing monitoring, optimization, and technical assistance to ensure long-term success.',
+            metric: '90 days',
+            metricLabel: 'Free support'
+        },
+        {
+            icon: Sparkles,
+            color: 'cyan',
+            title: 'Full Training Included',
+            description: 'Complete team onboarding with documentation, video tutorials, and live training sessions. Your team will be confident using and maintaining the AI system.',
+            metric: '100%',
+            metricLabel: 'Training coverage'
+        }
+    ];
+
+    const colorClasses = {
+        blue: {
+            icon: 'text-blue-600',
+            bg: 'bg-blue-50',
+            border: 'border-blue-100',
+            metric: 'text-blue-600'
+        },
+        purple: {
+            icon: 'text-purple-600',
+            bg: 'bg-purple-50',
+            border: 'border-purple-100',
+            metric: 'text-purple-600'
+        },
+        green: {
+            icon: 'text-green-600',
+            bg: 'bg-green-50',
+            border: 'border-green-100',
+            metric: 'text-green-600'
+        },
+        orange: {
+            icon: 'text-orange-600',
+            bg: 'bg-orange-50',
+            border: 'border-orange-100',
+            metric: 'text-orange-600'
+        },
+        pink: {
+            icon: 'text-pink-600',
+            bg: 'bg-pink-50',
+            border: 'border-pink-100',
+            metric: 'text-pink-600'
+        },
+        cyan: {
+            icon: 'text-cyan-600',
+            bg: 'bg-cyan-50',
+            border: 'border-cyan-100',
+            metric: 'text-cyan-600'
+        }
+    };
+
     return (
-        <section className="py-16 md:py-32 bg-white">
-            <div className="mx-auto max-w-7xl px-6">
-                <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">
-                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">GenXPro AI</span>
+        <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                {/* Header */}
+                <div className="max-w-3xl mx-auto text-center mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full mb-6">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-medium text-blue-900">Why GenX Pro AI</span>
+                    </div>
+                    
+                    <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                        The Difference is in the Details
                     </h2>
-                    <p className="mt-4 text-neutral-600 max-w-2xl mx-auto">
-                        Partner with us to transform your business with cutting-edge AI solutions, expert guidance, and dedicated support every step of the way.
+                    <p className="text-xl text-slate-600">
+                        We don't just build AI solutions—we deliver production-ready systems with measurable business impact, comprehensive training, and ongoing support.
                     </p>
                 </div>
-                <div className="mx-auto mt-8 grid max-w-sm gap-6 md:mt-16 md:max-w-full md:grid-cols-2 lg:grid-cols-3">
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Brain className="size-6 text-blue-600" aria-hidden />
-                            </CardDecorator>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">AI Expertise</h3>
-                        </CardHeader>
+                {/* Benefits Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {benefits.map((benefit, idx) => {
+                        const colors = colorClasses[benefit.color];
+                        const Icon = benefit.icon;
+                        
+                        return (
+                            <div 
+                                key={idx}
+                                className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg hover:border-slate-300 transition-all group"
+                            >
+                                {/* Icon */}
+                                <div className={`w-12 h-12 ${colors.bg} ${colors.border} border rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                    <Icon className={`w-6 h-6 ${colors.icon}`} />
+                                </div>
 
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Our team of AI specialists brings years of experience in developing and implementing cutting-edge artificial intelligence solutions across industries.
-                            </p>
-                        </CardContent>
-                    </Card>
+                                {/* Title */}
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                                    {benefit.title}
+                                </h3>
 
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <TrendingUp className="size-6 text-green-600" aria-hidden />
-                            </CardDecorator>
+                                {/* Description */}
+                                <p className="text-slate-600 leading-relaxed mb-6">
+                                    {benefit.description}
+                                </p>
 
-                            <h3 className="mt-6 font-semibold text-lg text-black">Proven Results</h3>
-                        </CardHeader>
+                                {/* Metric */}
+                                <div className={`pt-4 border-t ${colors.border}`}>
+                                    <div className={`text-2xl font-bold ${colors.metric} mb-1`}>
+                                        {benefit.metric}
+                                    </div>
+                                    <div className="text-sm text-slate-500">
+                                        {benefit.metricLabel}
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
 
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Track record of delivering measurable business outcomes with ROI-focused AI implementations that drive growth and efficiency.
-                            </p>
-                        </CardContent>
-                    </Card>
+                {/* Bottom Stats Bar */}
+                <div className="mt-20 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-10 text-white">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div className="text-4xl font-bold mb-2">50+</div>
+                            <div className="text-slate-300">AI Projects Delivered</div>
+                        </div>
+                        <div>
+                            <div className="text-4xl font-bold mb-2">95%</div>
+                            <div className="text-slate-300">Client Retention Rate</div>
+                        </div>
+                        <div>
+                            <div className="text-4xl font-bold mb-2">24/7</div>
+                            <div className="text-slate-300">Technical Support</div>
+                        </div>
+                        <div>
+                            <div className="text-4xl font-bold mb-2">15+</div>
+                            <div className="text-slate-300">Industries Served</div>
+                        </div>
+                    </div>
+                </div>
 
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Shield className="size-6 text-purple-600" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-semibold text-lg text-black">Secure & Compliant</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Enterprise-grade security and full compliance with industry standards to protect your data and maintain trust.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Users className="size-6 text-orange-600" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-semibold text-lg text-black">Tailored Solutions</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Custom AI strategies designed specifically for your business needs, industry, and goals - not one-size-fits-all solutions.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Headphones className="size-6 text-pink-600" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-semibold text-lg text-black">24/7 Support</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Comprehensive training programs and round-the-clock technical support to ensure your team maximizes AI capabilities.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border border-neutral-200 bg-neutral-50 shadow-sm hover:shadow-md transition-shadow">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Award className="size-6 text-cyan-600" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-semibold text-lg text-black">Industry Recognition</h3>
-                        </CardHeader>
-
-                        <CardContent>
-                            <p className="text-sm text-neutral-600">
-                                Award-winning AI solutions recognized by industry leaders for innovation, quality, and exceptional client satisfaction.
-                            </p>
-                        </CardContent>
-                    </Card>
+                {/* Trust Indicators */}
+                <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-slate-500">
+                    <div className="flex items-center gap-2">
+                        <Shield className="w-4 h-4" />
+                        <span>SOC 2 Compliant</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Shield className="w-4 h-4" />
+                        <span>GDPR Certified</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Shield className="w-4 h-4" />
+                        <span>ISO 27001</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        <span>99.9% SLA</span>
+                    </div>
                 </div>
             </div>
         </section>
     );
 }
-
-const CardDecorator = ({ children }) => (
-    <div aria-hidden className="relative mx-auto size-36" style={{
-        maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%)'
-    }}>
-        <div 
-            className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px] opacity-5"
-        />
-        <div className="bg-white absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l border-neutral-200 rounded-sm">
-            {children}
-        </div>
-    </div>
-);
