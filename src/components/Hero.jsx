@@ -124,7 +124,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base md:text-lg text-slate-600 mx-auto max-w-3xl text-center mb-12 leading-relaxed">
-            GenX Pro AI delivers custom AI chatbots, enterprise LLM implementations, and workflow automation using n8n and Zapier for businesses in [Healthcare,Finance,IT Industry].
+            GenX Pro AI delivers custom AI chatbots, enterprise-grade LLM implementations, and intelligent workflow automation using n8n and Zapier for businesses across Healthcare & Life Sciences, Financial Services & FinTech, Information Technology (IT), and E-commerce & Digital Enterprises.
           </p>
 
           {/* <div className="flex flex-wrap items-center justify-center gap-5 text-sm md:text-base font-medium text-slate-700">
@@ -159,6 +159,7 @@ export default function Hero() {
     </>
   );
 }
+
 
 
 
