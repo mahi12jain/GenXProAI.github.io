@@ -13,7 +13,7 @@ export default function Hero() {
     }
     function onClickOutside(e) {
       if (!menuRef.current) return;
-      if (menuRef.current.contains(e.target)) return;
+      if (menuRef.current.contains(e.target) || e.target.closest('#open-menu')) return;
       setMenuOpen(false);
     }
 
@@ -31,16 +31,6 @@ export default function Hero() {
       document.body.style.overflow = '';
     };
   }, [menuOpen]);
-
-  const menuClasses = [
-    'flex items-center gap-8 font-medium',
-    'max-md:fixed max-md:inset-0 max-md:z-[60] max-md:bg-white max-md:flex-col max-md:justify-center max-md:items-center',
-    'max-md:transition-all max-md:duration-300 max-md:ease-out'
-  ];
-
-  const mobileMenuState = menuOpen
-    ? 'max-md:opacity-100 max-md:pointer-events-auto'
-    : 'max-md:opacity-0 max-md:pointer-events-none';
 
   return (
     <>
@@ -61,27 +51,11 @@ export default function Hero() {
             <span className="text-2xl font-bold text-[#050040]">GenXProAI</span>
           </a>
 
-
-          <div
-            id="menu"
-            ref={menuRef}
-            className={[...menuClasses, mobileMenuState].join(' ')}
-            aria-hidden={!menuOpen}
-          >
-            <a href="#" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#features" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Features</a>
-            <a href="#about" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>About Us</a>
-
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="md:hidden absolute top-6 right-6 text-slate-800 hover:text-black transition"
-              aria-label="Close menu"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center gap-8 font-medium">
+            <a href="#" className="hover:text-blue-600 transition-colors">Home</a>
+            <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
+            <a href="#about" className="hover:text-blue-600 transition-colors">About Us</a>
           </div>
 
           <button onClick={() => setModalVisible(true)} className="hidden md:block text-black font-medium border-b-2 border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
@@ -90,7 +64,10 @@ export default function Hero() {
 
           <button
             id="open-menu"
-            onClick={() => setMenuOpen(true)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen(true);
+            }}
             className="md:hidden text-slate-800 hover:text-black transition"
             aria-label="Open menu"
           >
@@ -101,6 +78,37 @@ export default function Hero() {
             </svg>
           </button>
         </nav>
+
+        {/* Mobile menu - separate from nav for proper z-index stacking */}
+        <div
+          id="menu"
+          ref={menuRef}
+          className={`md:hidden fixed inset-0 z-[100] bg-white flex flex-col justify-start items-center pt-28 gap-8 font-medium transition-all duration-300 ease-out ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+        >
+          <a href="#" className="hover:text-blue-600 transition-colors text-lg" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#features" className="hover:text-blue-600 transition-colors text-lg" onClick={() => setMenuOpen(false)}>Features</a>
+          <a href="#about" className="hover:text-blue-600 transition-colors text-lg" onClick={() => setMenuOpen(false)}>About Us</a>
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              setModalVisible(true);
+            }}
+            className="hover:text-blue-600 transition-colors text-lg"
+          >
+            Contact Us
+          </button>
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="absolute top-6 right-6 text-slate-800 hover:text-black transition"
+            aria-label="Close menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
 
         <div className="flex-1 flex flex-col justify-center items-center w-full px-4 pb-24 pt-36">
           <div className="flex items-center gap-2 bg-indigo-50/70 backdrop-blur-sm border border-indigo-200/60 rounded-full w-max mx-auto px-5 py-2.5 mb-8">
@@ -119,7 +127,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold max-w-5xl text-center mx-auto text-[#050040] leading-tight mb-6">
             Enterprise AI Automation & Custom LLM Solutions  for{' '}
             <span className="bg-gradient-to-r from-[#5f4dff] via-[#7d4dff] to-[#e547d0] text-transparent bg-clip-text">
-              Business Growth 
+              Business Growth
             </span>
           </h1>
 
